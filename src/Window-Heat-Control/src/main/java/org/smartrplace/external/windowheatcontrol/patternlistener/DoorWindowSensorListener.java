@@ -44,7 +44,7 @@ public class DoorWindowSensorListener implements PatternListener<DoorWindowSenso
 	}
 	@Override
 	public void patternUnavailable(DoorWindowSensorPattern pattern) {
-		app.windowRoomMmgt.removeElementSafe(pattern);
+		app.windowRoomMmgt.removeElement(pattern);
 		app.newInformationForRoom(ResourceUtils.getDeviceRoom(pattern.model.getLocationResource()));
 		
 		availablePatterns.remove(pattern);

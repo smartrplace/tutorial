@@ -48,7 +48,8 @@ public class GenericThermostatListener implements PatternListener<GenericThermos
 	}
 	@Override
 	public void patternUnavailable(GenericThermostatPattern pattern) {
-		if(app.thermostatRoomMmgt.removeElement(pattern)) {
+		
+		if(app.thermostatRoomMmgt.isEmpty(app.thermostatRoomMmgt.removeElement(pattern))) {
 			app.newInformationForRoom(RoomHelper.getResourceLocationRoom(pattern.model));
 		}
 		

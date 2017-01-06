@@ -114,8 +114,8 @@ public class MainPage {
 			@Override
 			public void onGET(OgemaHttpRequest req) {
 				//find all managed rooms
-				List<String> thList = app.thermostatRoomMmgt.linkingResourceList;
-				List<String> sensList = app.windowRoomMmgt.linkingResourceList;
+				List<String> thList = app.thermostatRoomMmgt.getLinkingResourceList();
+				List<String> sensList = app.windowRoomMmgt.getLinkingResourceList();
 				thList.retainAll(sensList);
 				List<Room> roomList = new ArrayList<>();
 				for(String s: thList) {
