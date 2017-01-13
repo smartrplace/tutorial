@@ -26,7 +26,7 @@ import de.iwes.widgets.pattern.widget.patternedit.PatternPageUtil;
  * result to an OGEMA schedule. The file name determines the schedule name. 
  * Multiple folder configurations can be created, and the driver
  * provides a very simple graphical user interface, where existing configurations can be edited, 
- * and new ones created.
+ * and new ones can be created.
  */
 @Component(specVersion = "1.2", immediate = true)
 @Service(Application.class)
