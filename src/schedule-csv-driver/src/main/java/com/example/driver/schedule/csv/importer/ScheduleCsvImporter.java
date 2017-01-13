@@ -11,6 +11,7 @@ import org.ogema.core.resourcemanager.pattern.ResourcePatternAccess;
 
 import com.example.driver.schedule.csv.importer.model.FolderConfiguration;
 import com.example.driver.schedule.csv.importer.pattern.FolderConfigPattern;
+import com.example.driver.schedule.csv.importer.patternlistener.FolderConfigListener;
 
 import de.iwes.widgets.api.OgemaGuiService;
 import de.iwes.widgets.api.widgets.WidgetApp;
