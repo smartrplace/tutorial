@@ -1,0 +1,4 @@
+This rundir provides a minimal configuration for running OGEMA with the Widgets framework,
+plus a set of sample Widget apps. 
+
+See config/config.xml for the run configuration.

@@ -1,0 +1,6 @@
+# Homematic stick
+SUBSYSTEM=="usb",ATTR{idVendor}=="1b1f",ATTR{idProduct}=="c00f",MODE="0660",GROUP="plugdev"
+# ZWave, white stick, Sigma Designs
+SUBSYSTEM=="usb",ATTR{idVendor}=="0658",ATTR{idProduct}=="0200",MODE="0660",GROUP="plugdev"
+# ZWave, dark stick, Aeon 
+SUBSYSTEM=="usb",ATTR{idVendor}=="10c4",ATTR{idProduct}=="ea60",MODE="0660",GROUP="plugdev"

@@ -1,0 +1,188 @@
+# basic rights granted to all bundles
+allow { (org.osgi.framework.PackagePermission "org.osgi.*" "import") (org.osgi.framework.PackagePermission "javax.*" "import") (org.osgi.framework.PackagePermission "org.slf4j" "import") (org.osgi.framework.PackagePermission "org.xml.*" "import") (org.osgi.framework.PackagePermission "org.w3c.*" "import") (org.osgi.framework.PackagePermission "org.joda.time" "import") (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.PackagePermission "com.google.common.*" "import")} "basic import rights"
+allow { (org.osgi.framework.ServicePermission "org.ogema.core.application.Application" "register") (org.osgi.framework.PackagePermission "org.ogema.core.*" "import") (org.osgi.framework.PackagePermission "org.ogema.tools.*" "import") (org.osgi.framework.PackagePermission "org.ogema.model.*" "import") } "basic ogema rights"
+allow { (java.util.PropertyPermission "org.apache.felix.*" "read") } "felix property access"
+# for legacy GUI applications, using Wicket
+allow { (org.osgi.framework.ServicePermission "org.ogema.service.webresourcemanager.ComponentProvider" "register") (org.osgi.framework.PackagePermission "org.apache.wicket" "import") (org.osgi.framework.PackagePermission "org.apache.wicket.*" "import") (java.util.PropertyPermission "org.ogema.webresourcemanager.*" "read")} "wicket-gui-registration"
+#
+# gui -> FIXME required?
+# allow { (org.ogema.accesscontrol.WebAccessPermission "name=*") } "gui"
+allow { (org.ogema.accesscontrol.WebAccessPermission "name=org.ogema.ref-impl.framework-gui") } "gui"
+
+#
+# all permissions for permission admin
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/ogema/org.ogema.ref-impl.permission-admin-*"] (java.security.AllPermission) } "permission-admin"
+# user rights proxies:
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "urp:*"] (org.osgi.framework.PackagePermission "org.ogema.accesscontrol" "import") (org.osgi.framework.PackagePermission "org.osgi.*" "import") (org.osgi.framework.ServicePermission "org.ogema.accesscontrol.UserRightsProxy" "register") (org.osgi.framework.ServicePermission "org.ogema.core.application.Application" "register") (org.osgi.framework.ServicePermission "org.ogema.accesscontrol.PermissionManager" "get")} "urps"
+#
+# system bundle / osgi framework
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/system/*"] (java.security.AllPermission)} "system-bundles"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/osgi/*"] (java.security.AllPermission) } "osgi-services"
+#
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/logging/*"] (java.security.AllPermission) } "logging"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/wicket/*"] (java.security.AllPermission) } "wicket"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/jackson/*"] (java.security.AllPermission) } "jackson"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/felix-webconsole/*"] (java.security.AllPermission) } "webconsole"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/dependencies/*"] (java.security.AllPermission) } "direct framework dependencies"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/ogema/*"] (java.security.AllPermission) } "ogema framework"
+#
+# libraries 
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/lib/*"] (org.osgi.framework.PackagePermission "*" "import,exportonly") (java.security.AllPermission)} "libs"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/http/*"] (java.security.AllPermission)} "http"
+#
+# User permissions FIXME are these still required?
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "urp:master"] (org.ogema.accesscontrol.ResourcePermission "path=*" "read,write") } "master-resource-access"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "urp:rest"] (org.ogema.accesscontrol.ResourcePermission "path=*" "read,write") } "rest-resource-access"
+
+##### OGEMA tools #####
+# 
+# Pattern debugger
+#allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/org.ogema.tools.pattern-debugger-*"] (java.security.AllPermission)} "pattern-debugger"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/org.ogema.tools.pattern-debugger-*"] (org.osgi.framework.AdminPermission "*" "*" ) (org.ogema.accesscontrol.AdminPermission "*" "*") (org.ogema.accesscontrol.ResourcePermission "path=*" "read") } "pattern-debugger"
+#
+# REST importer
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/org.ogema.tools.rest-importer-*"] (java.security.AllPermission) } "rest-importer"
+
+##### OGEMA applications #####
+#
+## Apps common permissions ##
+# 
+# needed for security checks? -- is not checked by Felix but required with Equinox # FIXME still required?
+# allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/*"] (java.lang.RuntimePermission "getProtectionDomain") } "security"
+#
+## individual app permissions ##
+#
+# put apps that define bunlde permissions into subdir 'trusted'
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/trusted/*"] (java.security.AllPermission) } "trusted apps"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/trusted/*"] (java.security.AllPermission) } "trusted tools"
+
+#
+# simulated-freezer (all permissions, constrained by local permissions.perm)
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.simulated-freezer*"] (java.security.AllPermission) } "simulated-freezer"
+
+# coolspace-controller
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.coolspace-controller*"] (org.ogema.accesscontrol.ResourcePermission "type=org.ogema.model.devices.whitegoods.CoolingDevice" "read,write") } "coolspace-controller"
+# auto-math
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.experimental.automath-*"] (org.osgi.framework.PackagePermission "org.ogema.automath.model" "exportonly") } "auto-math-export"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.experimental.automath-*"] (org.ogema.accesscontrol.ResourcePermission "path=*" "*") } "auto-math-resources"
+# chain-app
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.multiapp-chain-*"] (java.util.PropertyPermission "chainapps.*" "read") } "chain-app"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.multiapp-chain-*"] (org.ogema.accesscontrol.ResourcePermission "path=*" "read,write,create,addsub,activity,delete") } "chain-app-resources"
+# resource-management-gui
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.ogema-resource-management-gui-*"] (java.util.PropertyPermission "org.ogema.webresourcemanager.*" "read") } "resource-management-gui"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.ogema-resource-management-gui-*"] (org.osgi.framework.PackagePermission "*" "exportonly") } "resource-management-gui-export"
+#
+# log-data-visualization
+#allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.log-data-visualization*"] (org.osgi.framework.PackagePermission "org.codehaus.jackson.*" "import") } "log-data-visualization-imports"
+#
+# graphvis-generator
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.graph-generator*"] (java.io.FilePermission "<<ALL FILES>>" "read,write,delete")} "graph-generator"
+#
+# Basic switch app
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.basic-switch-gui*"] (java.security.AllPermission)} "basic-switch-gui"
+#
+# Sensor alarm executor
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.sensor-alarm-executor*"] (org.osgi.framework.PackagePermission "org.ogema.apps.sensorwarning.model" "exportonly") (org.ogema.accesscontrol.ResourcePermission "type=org.ogema.apps.sensorwarning.model.SensorWarningConfiguration" "read") (org.ogema.accesscontrol.ResourcePermission "type=org.ogema.model.sensors.GenericFloatSensor" "read") (org.ogema.accesscontrol.ResourcePermission "type=org.ogema.model.actors.OnOffSwitch" "write") } "sensor-alarm-executor"
+#
+
+##### OGEMA drivers #####
+#
+## Drivers common permissions ##
+#
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/*"] (org.osgi.framework.PackagePermission "org.osgi.*" "import")  (org.osgi.framework.ServicePermission "org.ogema.core.channelmanager.driverspi.ChannelDriver" "register") } "drivers"
+#
+## Individual driver permissions ##
+#
+# Remote REST connector
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.apache.httpcomponents.http*"] (java.security.AllPermission) } "Http client"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.remote-rest-connector-*"] (org.osgi.framework.PackagePermission "de.iwes.ogema.remote.rest.connector.model" "exportonly") (org.ogema.accesscontrol.ResourcePermission "type=*" "read,write,addsub,create,activity,delete") (org.osgi.framework.PackagePermission "org.apache.http" "import") (org.osgi.framework.PackagePermission "org.apache.http.*" "import") } "Remote REST connector"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/de.iwes.ogema.remote-rest-configurator-*"] (org.osgi.framework.PackagePermission "de.iwes.ogema.remote.rest.connector.model" "import") (org.ogema.accesscontrol.ResourcePermission "type=de.iwes.ogema.remote.rest.connector.model.RestConnection" "read,write,addsub,create,activity,delete") (org.osgi.framework.PackagePermission "de.iwes.widgets.*" "import") (org.osgi.framework.PackagePermission "de.iwes.tools.*" "import")(org.osgi.framework.PackagePermission "de.iwes.util.*" "import") } "Remote REST configurator"
+#
+# OpenWeatherMap connector
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.openweathermap-connector-*"] (org.ogema.accesscontrol.ResourcePermission "type=*" "*") (org.osgi.framework.PackagePermission "com.fasterxml.jackson.*" "import") (org.osgi.framework.ServicePermission "org.ogema.apps.openweathermap.OpenWeatherMapApplicationI" "register") (org.osgi.framework.PackagePermission "org.ogema.apps.openweathermap" "exportonly") (java.util.PropertyPermission "org.ogema.drivers.openweathermap.stdCity" "read") (java.util.PropertyPermission "org.ogema.drivers.openweathermap.stdCountry" "read") } "Openweathermap connector"
+#
+# coap driver
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.coap-*"] (org.osgi.framework.PackagePermission "com.google.common.*" "import") (org.osgi.framework.PackagePermission "org.apache.*" "import") (org.osgi.framework.PackagePermission "org.ietf.*" "import") } "coap-driver"
+#
+# MBus driver
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/lib/rxtx*"] (org.osgi.framework.PackagePermission "gnu.io" "exportonly") } "rxtx"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/lib/jmbus-*"] (org.osgi.framework.PackagePermission "gnu.io" "import") (org.osgi.framework.PackagePermission "org.openmuc.*" "exportonly")} "jmbus"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.wmbus-*"] (org.osgi.framework.PackagePermission "org.openmuc.*" "import") (org.osgi.framework.PackagePermission "org.openmuc.jmbus" "import") } "wireless mbus"
+#
+# Modbus driver
+#
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.external.com.ghgande.j2mod-*"] (java.security.AllPermission) } "j2mod"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.modbus*"] (org.osgi.framework.ServicePermission "org.ogema.core.channelmanager.driverspi.ChannelDriver" "register")} "modbus-tcp"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.modbus*"] (org.osgi.framework.PackagePermission "gnu.io" "import") (org.osgi.framework.PackagePermission "com.ghgande.j2mod.modbus" "import") (org.osgi.framework.PackagePermission "com.ghgande.j2mod.modbus.*" "import")} "modbus-imports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.modbus*"] (org.osgi.framework.PackagePermission "org.ogema.drivers.modbus" "exportonly") (org.osgi.framework.ServicePermission "org.ogema.core.hardwaremanager.HardwareManager" "get")} "modbus-exports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.modbus-tcp-resource*"] (org.ogema.accesscontrol.ResourcePermission "path=*" "*") } "modbus-resource-based"
+#
+# KNX driver (see local permissions)
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.knx-2.*"] (java.security.AllPermission) } "knx-permission"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.knx-js-gui*"] (java.security.AllPermission) } "knx-js-gui-permissions"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.knx-wicket-gui*"] (org.osgi.framework.PackagePermission "org.apache.*" "import") (org.osgi.framework.PackagePermission "org.ogema.driver.knxdriver" "import") (org.osgi.framework.PackagePermission "org.ogema.service.webresourcemanager" "import")} "knx-wicket-gui-imports"
+#
+# Xbee driver (see local permissions)
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.xbee-*"] (java.security.AllPermission) } "xbee"
+#
+# generic Xbee driver
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-xbee-zb*"] (org.osgi.framework.ServicePermission "org.ogema.core.application.Application" "register") (org.osgi.framework.ServicePermission "org.ogema.driver.generic_xbee.ShellCommands" "register") (org.osgi.framework.ServicePermission "org.ogema.driverconfig.HLDriverInterface" "register") } "xbee-zb-service"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-xbee-zb*"] (org.osgi.framework.PackagePermission "org.apache.felix.service.command" "import") (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.PackagePermission "org.ogema.accesscontrol" "import")  } "xbee-zb-imports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-xbee-zb*"] (org.osgi.framework.PackagePermission "org.ogema.driverconfig" "import") } "xbee-zb-exports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-xbee-zb*"] (java.util.PropertyPermission "org.ogema.driver.xbee.scannetwork" "read") } "xbee-zb-property-permissions"
+#
+# Generic zigbee
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-zb*"] (org.osgi.framework.ServicePermission "org.ogema.core.application.Application" "register") (org.osgi.framework.ServicePermission "org.ogema.driver.generic_zb.ShellCommands" "register") (org.osgi.framework.ServicePermission "org.ogema.driverconfig.HLDriverInterface" "register")} "zb-service"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-zb*"] (org.osgi.framework.PackagePermission "org.apache.felix.service.command" "import") (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.PackagePermission "org.ogema.accesscontrol" "import")  } "zigbee-imports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-zb*"] (org.osgi.framework.PackagePermission "org.ogema.driverconfig" "import") } "zigbee-exports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.generic-zb*"] (java.util.PropertyPermission "org.ogema.driver.xbee.scannetwork" "read") } "zigbee-property-permissions"
+#
+# homematic:
+# extensive file permissions because of usb4java
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.homematic-*"] (org.osgi.framework.PackagePermission "org.ogema.driverconfig" "import") (org.osgi.framework.PackagePermission "org.usb4java" "import")  (java.io.FilePermission "<<ALL FILES>>" "read,write,delete") (java.lang.RuntimePermission "loadLibrary.*") (java.io.FilePermission "config/javax.usb.properties" "read") (java.util.PropertyPermission "usb4java.*" "read") (java.util.PropertyPermission "java.home" "read") (java.util.PropertyPermission "javax.usb.properties" "read") (java.util.PropertyPermission "os.*" "read") (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.PackagePermission "org.apache.*" "import") (org.osgi.framework.PackagePermission "org.ogema.accesscontrol" "import") (org.osgi.framework.ServicePermission "org.ogema.core.channelmanager.ChannelAccess" "get") (org.osgi.framework.ServicePermission "org.ogema.core.hardwaremanager.HardwareManager" "get") (org.osgi.framework.ServicePermission "org.ogema.driver.homematic.ShellCommands" "register") (org.osgi.framework.ServicePermission "org.ogema.driverconfig.LLDriverInterface" "register")} "homematic"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.hm-hl-*"] (org.osgi.framework.PackagePermission "org.apache.*" "import") (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.ServicePermission "org.ogema.core.application.Application" "register") (org.osgi.framework.ServicePermission "org.ogema.driver.hmhl.ShellCommands" "register") } "homematic-hl"
+# whatever, just give it AllPermission...
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.homematic-*"] (java.security.AllPermission)} "hm-testing"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.hm-hl-*"] (java.security.AllPermission)} "hm-hl-testing"
+#
+# Homematic XML RPC dependency
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.apache.servicemix.bundles.org.apache.servicemix.bundles.commons-httpclient-*"] (java.security.AllPermission)} "hm-xmlrpc-dependency"
+
+# zwave TODO refine
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.zwave-*"] (java.security.AllPermission)} "zwave"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/drivers/org.ogema.drivers.zwave-hl-*"] (java.security.AllPermission)} "zwave-hl"
+
+# Device configurator
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.device-configurator*"] (org.osgi.framework.PackagePermission "org.json" "import") (org.osgi.framework.PackagePermission "org.ogema.accesscontrol" "import") (org.osgi.framework.PackagePermission "org.osgi.service.http" "import") (org.osgi.framework.PackagePermission "javax.servlet" "import") (org.osgi.framework.PackagePermission "javax.servlet.http" "import") (org.osgi.framework.PackagePermission "org.osgi.util.tracker" "import") } "device-configurator-imports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.device-configurator*"] (org.osgi.framework.PackagePermission "org.ogema.driverconfig" "exportonly") } "device-configurator-exports"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.device-configurator*"] (org.osgi.framework.ServicePermission "org.osgi.service.http.HttpService" "get") (org.osgi.framework.ServicePermission "org.ogema.accesscontrol.PermissionManager" "get" ) (org.osgi.framework.ServicePermission "org.ogema.driverconfig.HLDriverInterface" "get") (org.osgi.framework.ServicePermission "org.ogema.driverconfig.LLDriverInterface" "get") (java.util.PropertyPermission "org.eclipse.jetty.util.UrlEncoding.charset" "read")} "device-configurator-services"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.device-configurator*"] (org.ogema.accesscontrol.ResourcePermission "path=*" "read,write,addsub,create,delete,activity") } "device-configurator-resources"
+#
+# scripting app permissions (choose one)
+#   basic permissions + read all resources (groovy console needs AllPermission on Equinox due to flaky UrlConnection implementation (org.eclipse.osgi.framework.internal.core.BundleURLConnection))
+#allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.experimental.ogema-console-scripting-*"](org.osgi.framework.PackagePermission "*" "import")(org.osgi.framework.ServicePermission "org.apache.felix.service.command.CommandProcessor" "get")(java.lang.RuntimePermission "*")(java.util.PropertyPermission "*" "read,write")(org.ogema.accesscontrol.ResourcePermission "path=*" "read")(org.ogema.accesscontrol.ResourcePermission "path=Testing,type=org.ogema.model.devices.whitegoods.CoolingDevice" "read,write,addsub,create,delete")(java.io.FilePermission "<<ALL FILES>>" "read")} "groovy-scripting"
+#   all permissions
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/org.codehaus.groovy.groovy-all-*"](java.security.AllPermission)} "groovy"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/tools/org.ogema.tools.ogema-console-scripting-*"](java.security.AllPermission)} "console-scripting"
+#
+
+##### Widgets ####
+
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/*"] (org.osgi.framework.PackagePermission "de.iwes.widgets.*" "import") (org.osgi.framework.PackagePermission "de.iwes.util.*" "import") (org.osgi.framework.PackagePermission "de.iwes.tools.*" "import") (org.osgi.framework.PackagePermission "de.iwes.pattern.management.backup" "import")  } "app-import-widgets"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/*"] (org.osgi.framework.ServicePermission "de.iwes.widgets.api.OgemaGuiService" "get") } "app-get-widgets-service"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/widgets/*"] (java.security.AllPermission)} "widgets"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/messaging/*"] (java.security.AllPermission)} "messaging"
+# TODO
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/simulations/*"] (java.security.AllPermission) } "simulations"
+
+# Widget Apps #
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.apps.room-link-*"] (org.osgi.framework.PackagePermission "org.apache.commons.fileupload" "import") (java.util.PropertyPermission "org.ogema.apps.createtestresources" "read") (org.ogema.accesscontrol.ResourcePermission "type=*" "read,write,addsub,create,activity,delete") (org.osgi.framework.PackagePermission "org.osgi.framework" "import") (org.osgi.framework.ServicePermission "org.ogema.driverconfig.LLDriverInterface" "get") (org.osgi.framework.PackagePermission "org.ogema.driverconfig" "import") (org.osgi.framework.PackagePermission "org.ogema.drivers.homematic.xmlrpc.hl.types" "import")} "room-link"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.widgets.datalog-resadmin-v2-*"] (org.osgi.framework.PackagePermission "org.smartrplace.resadmin.config" "exportonly") (org.osgi.framework.PackagePermission "org.apache.commons.io" "import") (org.ogema.accesscontrol.ResourcePermission "type=*" "read,write,addsub,create,activity,delete") (org.osgi.framework.PackagePermission "org.smartrplace.resadmin.config" "exportonly") (org.osgi.framework.PackagePermission "org.ogema.util.action" "import")} "resadminv2"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.widgets.datalog-bathing*"] (java.security.AllPermission)} "datalog-bathing"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.widgets.datalog-configgui*"] (java.security.AllPermission)} "datalog-configgui"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.widgets.datalog-sensact*"] (java.security.AllPermission)} "datalog-sensact"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.widgets.datalog-priceprovider*"] (java.security.AllPermission)} "datalog-priceprovider"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/org.ogema.apps.basic-room-link*"] (java.security.AllPermission)} "basic-room-link"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.iwes.apps.device-configuration*"] (java.security.AllPermission)} "device-configuration"
+allow { [org.osgi.service.condpermadmin.BundleLocationCondition "file:./bin/apps/de.smartrplace.remote-control-app-*"] (java.security.AllPermission)} "remote-control-app"
+
