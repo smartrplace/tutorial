@@ -206,26 +206,16 @@
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="knx-js-gui" version="&ogema-version;" start="true" startLevel="25" />
 --> 
 
-
-		<!-- xbee: additional dependencies in bin/ext (jssc,gnu.io) -->
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="xbee" version="&ogema-version;" start="true" startLevel="25" />
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="generic-xbee-zb" version="&ogema-version;" start="true" startLevel="25" />
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="generic-zb" version="&ogema-version;" start="true" startLevel="25" /> 
-
 		<!-- homematic: additional dependencies in bin/ext (org.usb4java.*) -->
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="homematic" version="&ogema-version;" start="true" startLevel="25"/>
+<!--		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="homematic" version="&ogema-version;" start="true" startLevel="25"/>
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="hm-hl" version="&ogema-version;" start="true" startLevel="25"/>
 		<bundle dir="bin/osgi" groupId="org.apache.commons" artifactId="commons-lang3" version="3.3.2" start="true" startLevel="25" /> 
-
+-->
 		<!-- homematic XML-RPC (requires Java 8, and an elder version of httpclient) -->
 		<bundle dir="bin/drivers" groupId="org.apache.servicemix.bundles" artifactId="org.apache.servicemix.bundles.commons-httpclient" version="3.1_7" />
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="homematic-xmlrpc-ll" version="&ogema-version;" />
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="homematic-xmlrpc-hl" version="&ogema-version;" />
 				
-		<!-- Z-Wave: additional dependencies in bin/ext (zwave4j) -->
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="zwave" version="&ogema-version;" startLevel="25"/>
-		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="zwave-hl" version="&ogema-version;" startLevel="25"/>
-
 		<!-- Remote REST connector --> 
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="remote-rest-connector" version="&ogema-version;"  startLevel="25"/>
 		<bundle dir="bin/drivers" groupId="de.iwes.ogema" artifactId="remote-rest-configurator" version="&ogema-version;"  startLevel="25"/>

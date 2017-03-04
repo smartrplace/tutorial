@@ -1,9 +1,5 @@
 package org.smartrplace.contest.app.profiletaker.gui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +7,12 @@ import org.ogema.core.application.ApplicationManager;
 import org.ogema.core.channelmanager.measurements.SampledValue;
 import org.ogema.core.timeseries.ReadOnlyTimeSeries;
 import org.ogema.model.metering.ElectricityMeter;
-import org.ogema.tools.resource.util.ResourceUtils;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantOperationalState;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantType;
-import org.smartrplace.widgetutils.FileDownloader;
+import org.smartrplace.contest.app.profiletaker.PowervisProfileTakerController;
+import org.smartrplace.contest.app.profiletaker.config.PowervisProfileTakerProgramConfig;
 
+import de.iwes.util.format.StringFormatHelper;
 import de.iwes.util.resource.ResourceHelper;
 import de.iwes.widgets.api.extended.mode.UpdateMode;
 import de.iwes.widgets.api.extended.resource.DefaultResourceTemplate;
@@ -26,6 +23,7 @@ import de.iwes.widgets.api.widgets.sessionmanagement.OgemaHttpRequest;
 import de.iwes.widgets.html.form.button.Button;
 import de.iwes.widgets.html.form.label.Header;
 import de.iwes.widgets.html.form.label.HeaderData;
+import de.iwes.widgets.html.form.textfield.TextField;
 import de.iwes.widgets.html.schedulemanipulator.ScheduleManipulatorConfiguration;
 import de.iwes.widgets.resource.widget.dropdown.ResourceDropdown;
 import de.iwes.widgets.reswidget.scheduleviewer.ScheduleViewerBasic;
@@ -40,7 +38,8 @@ public class MainPage {
 	public final long UPDATE_RATE = 5*1000;
 	private final WidgetPage<?> page; 
 	
-	public MainPage(final WidgetPage<?> page, final ApplicationManager appMan) {
+	public MainPage(final WidgetPage<?> page, final ApplicationManager appMan,
+			final PowervisProfileTakerController app) {
 		this.page = page;
 
 		Header header = new Header(page, "header", "Profile Taker");
@@ -117,13 +116,16 @@ public class MainPage {
             	ReadOnlyTimeSeries sched = slist.get(0);
             	PowervizPlantOperationalState state = dropState.getSelectedItem(req);
             	if(state == null) return;
+System.out.println("Copying values from "+StringFormatHelper.getFullTimeDateInLocalTimeZone(startTime)+
+		" to "+StringFormatHelper.getFullTimeDateInLocalTimeZone(endTime));
             	List<SampledValue> vals = sched.getValues(startTime, endTime);
             	state.powerSignature().program().deleteValues();
+            	state.powerSignature().program().create().activate(false);
             	state.powerSignature().program().addValues(vals);
         	}
         };
         
-        FileDownloader saveSignature = new FileDownloader(true, page, "saveSignature", "Save Signature to file", appMan) {
+        /*FileDownloader saveSignature = new FileDownloader(true, page, "saveSignature", "Save Signature to file", appMan) {
 
 			@Override
 			protected String getCustomFileName(String data, OgemaHttpRequest req) {
@@ -147,18 +149,6 @@ public class MainPage {
 				final Path temp = appMan.getDataFile("temp").toPath();
             	//final Path temp = Paths.get("data", "temp");
             	final Path base = temp.resolve("signatureSave.xml");
-				/*try {
-				if (Files.exists(base)) {
-					if (Files.isDirectory(base))
-						FileUtils.deleteDirectory(base.toFile());
-					else 
-						Files.delete(base);
-				}
-					Files.createDirectories(base);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}*/
 				File ownFile = base.toFile();
 				try (PrintWriter out = new PrintWriter(ownFile)) {
 					out.print(appMan.getSerializationManager(20, false, true).toXml(state));
@@ -168,7 +158,25 @@ public class MainPage {
 		//		}
 				return ownFile;
 			}
-         };
+         };*/
+        final TextField backupConfigName = new TextField(page, "backupConfigName");
+        Button saveBackup = new Button(page, "saveBackup", "save Backup") {
+			private static final long serialVersionUID = 1L;
+			@Override
+			public void onPOSTComplete(String data, OgemaHttpRequest req) {
+				PowervizPlantOperationalState state = dropState.getSelectedItem(req);
+				List<ReadOnlyTimeSeries> items = new ArrayList<>();
+				if(state == null) return;
+				String name = backupConfigName.getValue(req);
+				PowervisProfileTakerProgramConfig backup = app.appConfigData.availablePrograms().addDecorator(name,
+						PowervisProfileTakerProgramConfig.class);
+				backup.name().create();
+				backup.name().setValue(name);
+				backup.backupSignature().program().create();
+				List<SampledValue> vals = state.powerSignature().program().getValues(0);
+				backup.backupSignature().program().addValues(vals);
+			}
+        };
          
  		ScheduleViewerConfiguration configSignature = new ScheduleViewerConfiguration(true, true, false, false, maipulatorConfig, true, null, null, null, null, 24*60*60*1000L);
         final ScheduleViewerBasic<ReadOnlyTimeSeries> viewerSignature = new ScheduleViewerBasic<ReadOnlyTimeSeries>(page, "viewerWidgetSignature",
@@ -196,12 +204,13 @@ public class MainPage {
         page.showOverlay(true);
 		
 		page.append(header);
-		StaticTable table1 = new StaticTable(1, 4);
+		StaticTable table1 = new StaticTable(1, 5);
 		page.append(table1);
 		table1.setContent(0, 0, dropState);
 		table1.setContent(0, 1, dropMeter);
 		table1.setContent(0, 2, takeSigButton);
-		table1.setContent(0, 3, saveSignature.buttonDownload);
+		table1.setContent(0, 3, saveBackup);
+		table1.setContent(0, 4, backupConfigName);
 		page.append(viewer);
 		page.append(viewerSignature);
 		
