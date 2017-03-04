@@ -86,6 +86,12 @@ public class MeterController implements Callable<MatchingResult> {
 		return states;
 	}
 	
-	
+	/**
+	 * May return null
+	 * @return
+	 */
+	public Future<MatchingResult> getResult() {
+		return lastResult;
+	}
 	
 }

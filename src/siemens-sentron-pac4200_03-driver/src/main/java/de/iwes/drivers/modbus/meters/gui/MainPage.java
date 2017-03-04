@@ -272,6 +272,7 @@ public class MainPage {
 	private final void setDependencies() {
 		newDeviceSubmit.triggerAction(table, TriggeringAction.POST_REQUEST, TriggeredAction.GET_REQUEST);
 		newDeviceSubmit.triggerAction(alert, TriggeringAction.POST_REQUEST, TriggeredAction.GET_REQUEST);
+		typeSelector.triggerAction(table, TriggeringAction.POST_REQUEST, TriggeredAction.GET_REQUEST);
 	}
 	
 }

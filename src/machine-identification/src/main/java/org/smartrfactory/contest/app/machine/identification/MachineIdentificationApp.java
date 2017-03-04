@@ -1,6 +1,7 @@
 package org.smartrfactory.contest.app.machine.identification;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,6 +12,9 @@ import org.ogema.core.application.Application;
 import org.ogema.core.application.ApplicationManager;
 import org.ogema.core.model.Resource;
 import org.ogema.model.metering.ElectricityMeter;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.framework.ServiceRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingAlgorithm;
@@ -27,6 +31,7 @@ public class MachineIdentificationApp implements Application {
 	private final Map<ElectricityMeter, MeterController> controllers = new HashMap<>();
 	private ApplicationManager am;
 	private ExecutorService exec;
+	private ServiceRegistration<ShellCommands> shell;
 
     /*
      * This is the entry point to the application.
@@ -35,6 +40,11 @@ public class MachineIdentificationApp implements Application {
     public void start(ApplicationManager appManager) {
  		this.am = appManager;
  		this.exec = Executors.newFixedThreadPool(3);
+		BundleContext ctx = FrameworkUtil.getBundle(getClass()).getBundleContext();
+		Hashtable<String, Object> props = new Hashtable<String, Object>();
+		props.put("osgi.command.scope", "factory");
+		props.put("osgi.command.function", new String[] { "startIdentification", "identificationResults" });
+		shell = ctx.registerService(ShellCommands.class, new ShellCommands(this), props);
      }
 
      /*
@@ -45,7 +55,10 @@ public class MachineIdentificationApp implements Application {
     	synchronized (controllers) {
     		controllers.clear();
     	}
-    	this.am = null;
+    	if (shell != null)
+    		shell.unregister();
+    	shell = null;
+    	am = null;
     }
     
     String startIdentification(String meterId) {
@@ -70,6 +83,17 @@ public class MachineIdentificationApp implements Application {
     			c = new MeterController(meter,am,exec, algo);
     			controllers.put(meter, c);
     		}
+    		return c;
+    	}
+    }
+    
+    MeterController getController(String meterIn) {
+    	ElectricityMeter meter = am.getResourceAccess().getResource(meterIn);
+    	if (meter == null)
+    		return null;
+    	meter= meter.getLocationResource();
+    	synchronized (controllers) {
+    		MeterController c = controllers.get(meter);
     		return c;
     	}
     }
