@@ -8,8 +8,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 import org.ogema.core.application.ApplicationManager;
+import org.ogema.core.model.simple.SingleValueResource;
+import org.ogema.core.recordeddata.RecordedData;
 import org.ogema.core.timeseries.ReadOnlyTimeSeries;
 import org.ogema.model.metering.ElectricityMeter;
+import org.ogema.tools.resource.util.LoggingUtils;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingAlgorithm;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingResult;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingStatistics;
@@ -36,6 +39,14 @@ public class MeterController implements Callable<MatchingResult> {
 
 	public boolean isRunning() {
 		return running;
+	}
+	
+	public SingleValueResource getReading() {
+		return meter.connection().powerSensor().reading();
+	}
+	
+	public RecordedData getLogdata() {
+		return LoggingUtils.getHistoricalData(meter.connection().powerSensor().reading());
 	}
 	
 	public String start() {
@@ -77,7 +88,7 @@ public class MeterController implements Callable<MatchingResult> {
 		}
 	}
 	
-	private static List<PowervizPlantOperationalState> getAllStates(PowervizBaseConfig config) {
+	static List<PowervizPlantOperationalState> getAllStates(PowervizBaseConfig config) {
 		final List<PowervizPlantType> types = config.knownTypes().getAllElements();
 		final List<PowervizPlantOperationalState> states = new ArrayList<>();
 		for (PowervizPlantType t: types) {

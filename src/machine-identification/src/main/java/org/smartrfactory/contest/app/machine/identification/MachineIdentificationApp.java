@@ -35,7 +35,7 @@ public class MachineIdentificationApp implements Application {
 	private static final String servletPath = "/org/smartrfactory/app/identificiation";
 	// synchronized on itself
 	private final Map<ElectricityMeter, MeterController> controllers = new HashMap<>();
-	private ApplicationManager am;
+	ApplicationManager am;
 	private ExecutorService exec;
 	private ServiceRegistration<ShellCommands> shell;
 	private HttpServlet servlet;

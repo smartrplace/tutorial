@@ -16,8 +16,6 @@ public class MatchingStatisticsImpl implements MatchingStatistics{
 	
 	public MatchingStatisticsImpl(ReadOnlyTimeSeries timeSeries,FloatResource target, float avDev, long startTime, long endTime,
 			float avTarget, float avSignature) {
-		// FIXME
-		System.out.println("    New mathcing stats " + avDev + ", time series "  +timeSeries);
 		this.timeSeries = timeSeries;
 		this.target = target;
 		this.startTime = startTime;
@@ -49,7 +47,7 @@ public class MatchingStatisticsImpl implements MatchingStatistics{
 
 	@Override
 	public Long endtime() {
-		return endtime();
+		return endTime;
 	}
 
 	@Override
