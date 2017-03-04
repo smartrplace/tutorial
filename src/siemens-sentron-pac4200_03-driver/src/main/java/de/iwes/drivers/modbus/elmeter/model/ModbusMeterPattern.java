@@ -33,7 +33,7 @@ public class ModbusMeterPattern<M extends ModbusMeter> extends ResourcePattern<M
 
 	public final ElectricityConnection connection = model.connection();
 	
-	public final PowerSensor powerSensor = model.connection().powerSensor();
+	public final PowerSensor powerSensor = connection.powerSensor();
 	
 	/**
 	 * Subphase sensors below
