@@ -263,6 +263,9 @@
 		
    		<bundle dir="bin/commons" groupId="org.apache.commons" artifactId="commons-csv" version="1.4" startLevel="3"/>
 	    <bundle dir="bin/apps" groupId="org.smartrplace.tools" artifactId="schedule-management" version="&widgets-version;" startLevel="30" /> 
+	    
+		<bundle dir="bin/apps" groupId="org.smartrplace.tools" artifactId="schedule-management" version="&widgets-version;" startLevel="30" /> 
+		<bundle dir="bin/apps" groupId="org.ogema.drivers" artifactId="siemens-sentron-pac4200_03-driver" version="&widgets-version;" startLevel="30" /> 
 		
 	    <bundle dir="bin/apps" groupId="org.smartrfactory.contest.app" artifactId="powerviz-base" version="1.0.0-SNAPSHOT" startLevel="30" /> 
 		 
