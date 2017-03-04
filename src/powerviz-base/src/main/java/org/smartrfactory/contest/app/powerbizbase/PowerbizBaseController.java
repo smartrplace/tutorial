@@ -9,7 +9,12 @@ import org.smartrfactory.contest.app.powerbizbase.config.PowervizBaseConfig;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlant;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantOperationalState;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantType;
+import org.smartrplace.util.multiresourcedemand.MultiResourceDemand;
+import org.smartrplace.util.multiresourcedemand.MultiResourceDemandHelper;
+import org.smartrplace.util.multiresourcedemand.MultiResourceDemandListener;
+import org.smartrplace.util.multiresourcedemand.SingleResourceDemand;
 
+import de.iwes.util.logconfig.LogHelper;
 import de.iwes.util.resource.ValueResourceHelper;
 
 // here the controller logic is implemented
@@ -28,9 +33,30 @@ public class PowerbizBaseController {
 		
         initConfigurationResource();
         initDemands();
+        
+        initLogging();
 	}
 
-    /*
+    private void initLogging() {
+    	/*MultiResourceDemand demand = new MultiResourceDemand(true,
+    			new SingleResourceDemand(ElectricityMeter.class, "PopcornMachineMeter"));
+    	MultiResourceDemandHelper.registerStartupDemand(demand, new MultiResourceDemandListener() {
+			@Override
+			public void demandComplete(MultiResourceDemand demand) {
+				LogHelper.activateLogging(demand.get(ElectricityMeter.class).connection().powerSensor().reading());
+			}
+		}, appMan);
+    	demand = new MultiResourceDemand(true,
+    			new SingleResourceDemand(ElectricityMeter.class, "LenzeDemoMeter"));
+    	MultiResourceDemandHelper.registerStartupDemand(demand, new MultiResourceDemandListener() {
+			@Override
+			public void demandComplete(MultiResourceDemand demand) {
+				LogHelper.activateLogging(demand.get(ElectricityMeter.class).connection().powerSensor().reading());
+			}
+		}, appMan);*/
+	}
+
+	/*
      * This app uses a central configuration resource, which is accessed here
      */
     private void initConfigurationResource() {

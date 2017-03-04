@@ -1,0 +1,5131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<og:resource xsi:type="og:FloatResource" xmlns:og="http://www.ogema-source.net/REST" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <name>FloatResource0</name>
+    <type>org.ogema.core.model.simple.FloatResource</type>
+    <path>FloatResource0</path>
+    <decorating>false</decorating>
+    <active>true</active>
+    <resource>
+        <name>modbusCommunication</name>
+        <type>org.ogema.model.communication.ModbusCommunicationInformation</type>
+        <path>FloatResource0/modbusCommunication</path>
+        <decorating>true</decorating>
+        <active>true</active>
+        <resource>
+            <name>comAddress</name>
+            <type>org.ogema.model.communication.ModbusAddress</type>
+            <path>FloatResource0/modbusCommunication/comAddress</path>
+            <decorating>false</decorating>
+            <active>true</active>
+            <resource xsi:type="og:BooleanResource">
+                <name>readable</name>
+                <type>org.ogema.core.model.simple.BooleanResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/readable</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>true</value>
+            </resource>
+            <resource xsi:type="og:IntegerResource">
+                <name>port</name>
+                <type>org.ogema.core.model.simple.IntegerResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/port</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>502</value>
+            </resource>
+            <resource xsi:type="og:StringResource">
+                <name>dataType</name>
+                <type>org.ogema.core.model.simple.StringResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/dataType</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>FLOAT</value>
+            </resource>
+            <resource xsi:type="og:StringResource">
+                <name>host</name>
+                <type>org.ogema.core.model.simple.StringResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/host</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>172.16.162.2</value>
+            </resource>
+            <resource xsi:type="og:IntegerResource">
+                <name>count</name>
+                <type>org.ogema.core.model.simple.IntegerResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/count</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>2</value>
+            </resource>
+            <resource xsi:type="og:IntegerResource">
+                <name>unitId</name>
+                <type>org.ogema.core.model.simple.IntegerResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/unitId</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>1</value>
+            </resource>
+            <resource xsi:type="og:BooleanResource">
+                <name>writeable</name>
+                <type>org.ogema.core.model.simple.BooleanResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/writeable</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>false</value>
+            </resource>
+            <resource xsi:type="og:StringResource">
+                <name>registerType</name>
+                <type>org.ogema.core.model.simple.StringResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/registerType</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>HOLDING_REGISTERS</value>
+            </resource>
+            <resource xsi:type="og:IntegerResource">
+                <name>register</name>
+                <type>org.ogema.core.model.simple.IntegerResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/register</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>1</value>
+            </resource>
+            <resource xsi:type="og:BooleanResource">
+                <name>littleEndianRegisterOrder</name>
+                <type>org.ogema.core.model.simple.BooleanResource</type>
+                <path>FloatResource0/modbusCommunication/comAddress/littleEndianRegisterOrder</path>
+                <decorating>false</decorating>
+                <active>true</active>
+                <value>false</value>
+            </resource>
+        </resource>
+        <resource xsi:type="og:FloatResource">
+            <name>offset</name>
+            <type>org.ogema.core.model.simple.FloatResource</type>
+            <path>FloatResource0/modbusCommunication/offset</path>
+            <decorating>false</decorating>
+            <active>true</active>
+            <value>0.0</value>
+        </resource>
+        <resource xsi:type="og:FloatResource">
+            <name>factor</name>
+            <type>org.ogema.core.model.simple.FloatResource</type>
+            <path>FloatResource0/modbusCommunication/factor</path>
+            <decorating>false</decorating>
+            <active>true</active>
+            <value>1.0</value>
+        </resource>
+    </resource>
+    <resource xsi:type="og:FloatSchedule">
+        <name>program</name>
+        <type>org.ogema.core.model.schedule.AbsoluteSchedule</type>
+        <path>FloatResource0/program</path>
+        <decorating>false</decorating>
+        <active>true</active>
+        <interpolationMode>NONE</interpolationMode>
+        <lastUpdateTime>-1</lastUpdateTime>
+        <lastCalculationTime>0</lastCalculationTime>
+        <start>0</start>
+        <end>9223372036854775807</end>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517567391</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517627390</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517687389</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517747388</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517807386</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517867385</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517927384</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488517987383</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518047382</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518107381</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518167380</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518227379</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518287378</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518347377</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518407376</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518467375</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518527374</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518587373</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518647372</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518707371</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518767370</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518827369</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518887368</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488518947367</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519007366</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519067365</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519127364</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519187363</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519247362</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519307361</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519367360</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519427359</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519487358</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519547357</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519607356</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519667355</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519727354</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519787353</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519847352</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519907351</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488519967350</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520027349</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520087348</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520147347</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520207346</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520267345</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520327344</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520387343</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520447342</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520507341</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520567340</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520627339</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520687338</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520747337</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520807336</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520867335</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520927334</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488520987333</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521047332</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521107331</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521167330</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521227329</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521287328</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521347327</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521407326</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521467325</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521527324</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521587323</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521647322</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521707321</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521767320</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521827319</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521887318</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488521947317</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522007316</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522067315</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522127314</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522187313</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522247312</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522307312</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522367310</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522427310</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522487309</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522547308</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522607307</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522667306</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522727305</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522787304</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522847303</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522907302</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488522967301</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523027300</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523087299</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523147298</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523207297</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523267296</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523327295</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523387294</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523447293</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523507293</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523567292</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523627291</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523687290</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523747289</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523807288</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523867287</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523927286</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488523987285</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524047284</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524107283</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524167282</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524227281</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524287280</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524347279</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524407279</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524467278</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524527277</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524587276</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524647275</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524707274</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524767273</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524827272</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524887271</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488524947270</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525007269</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525067269</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525127268</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525187267</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525247266</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525307265</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525367264</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525427263</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525487262</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525547261</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525607260</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525667259</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525727258</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525787258</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525847257</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525907256</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488525967255</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526027254</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526087253</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526147252</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526207251</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526267250</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526327249</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526387249</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526447248</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526507247</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526567246</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526627245</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526687244</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526747243</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526807242</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526867242</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526927241</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488526987240</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527047239</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527107238</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527167237</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527227236</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527287235</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527347235</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527407234</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527467233</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527527232</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527587231</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527647230</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527707229</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527767228</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527827228</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527887227</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488527947226</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528007225</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528067224</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528127223</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528187223</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528247222</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528307221</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528367220</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528427219</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528487218</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528547217</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528607216</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528667157</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528727156</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528787155</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528847154</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528907153</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488528967152</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529027151</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529087150</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529147149</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529207148</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529267147</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529327146</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529387145</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529447144</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529507143</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529567142</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529627141</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529687141</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529747140</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529807139</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529867138</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529927137</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488529987136</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530047135</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530107134</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530167133</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530227132</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530287131</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530347130</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530407129</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530467128</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530527127</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530587126</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530647126</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530707125</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530767124</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530827123</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530887122</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488530947121</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531007120</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531067119</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531127118</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531187117</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531247116</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531307115</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531367114</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531427114</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531487113</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531547112</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531607111</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531667110</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531727109</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531787108</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531847107</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531907106</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488531967105</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532027104</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532087104</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532147103</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532207102</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532267101</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532327100</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532387099</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532447098</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532507096</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532567095</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532627094</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532687093</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532747092</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532807091</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532867090</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532927089</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488532987088</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533047088</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533107087</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533167086</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533227085</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533287084</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533347083</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533407082</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533467081</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533527080</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533587080</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533647079</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533707078</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533767077</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533827076</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533887075</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488533947074</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534007074</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534067073</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534127072</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534187071</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534247070</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534307069</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534367068</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534427067</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534487066</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534547065</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534607064</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534667064</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534727063</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534787062</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534847061</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534907060</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488534967059</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535027058</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535087057</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535147056</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535207055</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535267054</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535327054</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535387053</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535447052</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535507051</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535567050</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535627049</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535687048</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535747047</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535807046</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535867046</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535927045</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488535987044</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536047043</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536107042</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536167041</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536227040</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536287040</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536347039</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536407038</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536467037</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536527036</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536587036</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536647035</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536707034</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536767033</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536827032</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536887031</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488536947031</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537007030</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537067029</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537127028</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537187027</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537247026</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537307026</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537367025</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537427024</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537487023</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537547022</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537607022</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537667021</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537727020</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537787019</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537847018</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537907017</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488537967016</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538027016</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538087015</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538147014</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538207013</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538267012</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538327012</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538387011</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538447010</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538507009</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538567008</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538627008</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538687007</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538747006</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538807005</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538867004</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538927003</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488538987002</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539047002</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539107001</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539167000</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539226999</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539286998</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539346998</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539406997</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539466996</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539526995</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539586994</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539646994</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539706993</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539766992</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539826991</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539886990</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488539946990</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540006989</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540066988</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540126987</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540186987</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540246986</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540306985</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540366984</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540426984</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540486983</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540546982</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540606981</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540666980</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540726980</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540786979</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540846978</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540906977</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488540966977</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541026976</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541086975</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541146974</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541206973</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541266973</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541326972</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541386971</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541446970</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541506970</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541566969</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541626968</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541686967</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541746967</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541806966</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541866965</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541926964</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488541986964</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542046963</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542106962</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542166961</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542226960</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542286959</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542346959</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542406958</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542466957</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542526956</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542586956</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542646955</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542706954</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542766954</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542826953</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542886952</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488542946951</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543006951</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543066950</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543126949</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543186948</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543246948</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543306947</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543366946</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543426946</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543486945</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543546944</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543606943</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543666943</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543726942</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543786941</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543846941</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543906940</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488543966939</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544026939</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544086938</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544146937</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544206936</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544266936</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544326935</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544386934</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544446934</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544506933</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544566932</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544626932</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544686931</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544746930</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544806929</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544866929</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544926928</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488544986927</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545046927</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545106926</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545166925</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545226925</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545286924</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545346923</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545406923</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545466922</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545526921</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545586921</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545646920</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545706919</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545766918</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545826918</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545886917</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488545946916</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546006916</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546066915</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546126914</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546186914</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546246913</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546306912</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546366912</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546426911</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546486910</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546546910</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546606909</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546666908</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546726907</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546786907</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546846906</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546906905</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488546966905</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547026904</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547086903</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547146903</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547206902</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547266902</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547326901</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547386900</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547446900</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547506899</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547566898</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547626898</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547686897</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547746896</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547806896</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547866895</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547926894</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488547986894</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548046893</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548106893</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548166892</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548226891</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548286890</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548346890</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548406889</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548466888</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548526888</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548586887</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548646886</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548706886</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548766885</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548826885</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548886884</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488548946883</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549006883</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549066882</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549126882</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549186881</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549246880</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549306880</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549366879</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549426878</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549486878</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549546877</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549606877</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549666876</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549726875</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549786875</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549846874</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549906873</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488549966873</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550026872</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550086872</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550146871</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550206870</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550266870</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550326869</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550386869</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550446868</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550506867</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550566867</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550626866</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550686866</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550746865</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550806864</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550866864</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550926863</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488550986863</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551046862</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551106861</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551166861</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551226860</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551286860</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551346859</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551406859</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551466858</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551526857</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551586857</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551646856</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551706856</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551766855</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551826854</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551886854</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488551946853</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552006853</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552066852</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552126852</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552186851</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552246850</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552306850</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552366849</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552426849</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552486848</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552546847</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552606847</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552666846</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552726846</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552786845</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552846845</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552906844</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488552966844</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553026843</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553086842</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553146842</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553206841</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553266841</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553326840</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553386840</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553446839</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553506839</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553566838</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553626837</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553686837</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553746836</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553806836</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553866835</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553926835</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488553986834</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554046834</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554106833</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554166833</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554226832</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554286832</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554346831</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554406830</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554466830</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554526829</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554586829</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554646828</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554706828</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554766827</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554826827</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554886826</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488554946826</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555006825</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555066825</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555126824</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555186823</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555246823</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555306822</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555366822</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555426821</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555486821</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555546820</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555606820</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555666819</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555726819</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555786818</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555846817</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555906817</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488555966816</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556026816</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556086815</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556146815</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556206814</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556266814</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556326813</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556386812</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556446812</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556506811</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556566811</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556626810</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556686810</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556746809</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556806809</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556866808</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556926808</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488556986807</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557046807</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557106806</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557166806</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557226805</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557286805</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557346804</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557406804</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557466803</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557526803</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557586802</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557646802</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557706801</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557766801</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557826800</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557886800</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488557946799</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558006799</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558066798</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558126798</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558186798</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558246797</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558306797</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558366796</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558426796</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558486795</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558546795</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558606794</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558666794</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558726793</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558786793</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558846792</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558906792</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488558966791</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559026791</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559086790</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559146790</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559206789</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559266789</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559326789</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559386788</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559446788</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559506787</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559566787</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559626785</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559686784</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559746777</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559806776</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559866773</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559926773</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488559986772</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560046772</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560106771</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560166771</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560226770</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560286770</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560346769</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560406769</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560466768</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560526768</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560586767</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560646767</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560706767</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560766766</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560826766</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560886765</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488560946765</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561006764</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561066764</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561126763</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561186763</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561246762</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561306762</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561366761</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561426761</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561486760</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561546760</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561606759</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561666759</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561726758</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561786758</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561846758</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561906757</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488561966757</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562026756</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562086756</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562146755</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562206755</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562266754</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562326754</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562386754</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562446753</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562506746</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562566745</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562626745</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562686744</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562746744</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562806743</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562866743</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562926741</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488562986741</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563046740</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563106740</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563166739</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563226739</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563286738</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563346734</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563406734</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563466733</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563526733</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563586732</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563646732</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563706731</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563766731</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563826731</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563886730</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488563946730</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564006729</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564066729</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564126728</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564186728</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564246727</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564306727</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564366727</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564426726</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564486726</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564546725</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564606725</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564666724</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564726724</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564786724</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564846723</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564906722</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488564966722</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565026722</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565086721</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565146720</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565206720</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565266720</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565326719</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565386719</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565446718</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565506718</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565566717</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565626717</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565686716</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565746716</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565806715</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565866715</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565926715</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488565986714</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566046714</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566106713</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566166713</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566226712</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566286711</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566346711</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566406710</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566466710</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566526710</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566586709</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566646709</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566706708</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566766708</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566826707</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566886707</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488566946707</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567006706</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567066706</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567126705</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567186705</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567246705</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567306704</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567366704</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567426703</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567486703</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567546702</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567606702</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567666701</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567726701</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567786700</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567846700</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567906700</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488567966699</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568026699</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568086699</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568146698</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568206698</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568266697</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568326697</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568386696</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568446696</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568506696</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568566695</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568626695</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568686694</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568746694</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568806693</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568866693</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568926692</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488568986692</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569046692</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569106691</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569166691</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569226690</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569286690</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569346690</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569406689</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569466689</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569526688</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569586688</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569646687</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569706686</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569766685</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569826684</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569886683</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488569946682</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570006680</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570066679</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570126678</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570186676</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570246675</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570306674</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570366673</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570426672</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570486670</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570546669</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570606668</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570666667</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570726666</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570786665</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570846664</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570906663</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488570966662</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571026660</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571086659</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571146658</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571206657</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571266656</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571326655</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571386654</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571446652</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571506650</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571566649</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571626647</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571686645</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571746643</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571806642</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571866640</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571926638</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488571986637</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572046635</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572106634</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572166632</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572226630</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572286629</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572346627</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572406626</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572466625</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572526623</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572586622</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572646620</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572706619</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572766617</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572826616</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572886613</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488572946612</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573006610</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573066609</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573126607</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573186606</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573246605</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573306603</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573366588</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573426587</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573486585</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573546584</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573606583</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573666581</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573726580</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573786579</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573846577</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573906576</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488573966575</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574026574</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574086563</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574146562</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574206561</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574266554</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574326552</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574386551</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574446550</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574506549</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574566548</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574626547</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574686546</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574746545</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574806544</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574866543</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574926525</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488574986522</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575046501</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575106500</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575166499</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575226498</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575286497</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575346497</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575406496</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575466495</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575526494</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575586493</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575646493</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575706492</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575766413</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575826408</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575886407</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488575946406</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576006406</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576066405</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576126399</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576186399</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576246398</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576306397</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576366396</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576426387</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576486386</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576546385</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576606385</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576666384</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576726384</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576786383</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576846383</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576906382</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488576966382</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577026381</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577086381</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577146380</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577206380</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577266379</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577326379</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577386379</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577446378</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+        <entry xsi:type="og:SampledFloat">
+            <time>1488577506377</time>
+            <quality>GOOD</quality>
+            <value>10.0</value>
+        </entry>
+    </resource>
+    <value>235.42311</value>
+</og:resource>
