@@ -46,7 +46,7 @@ public class PowervisProfileTakerApp implements Application {
 		//register a web page with dynamically generated HTML
 		widgetApp = guiService.createWidgetApp(urlPath, appManager);
 		WidgetPage<?> page = widgetApp.createStartPage();
-		mainPage = new MainPage(page, appMan);
+		mainPage = new MainPage(page, appMan, controller);
      }
 
      /*

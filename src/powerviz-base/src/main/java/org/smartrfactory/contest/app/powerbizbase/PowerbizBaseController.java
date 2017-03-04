@@ -99,12 +99,15 @@ public class PowerbizBaseController {
 		PowervizPlantOperationalState offLib = getAnalysis(stype1.libraryDevice(), "off");
 		ValueResourceHelper.setIfNew(offLib.name(), "Aus/Low-Standby");
 		ValueResourceHelper.setIfNew(offLib.levelToPlot(), 0);
+		offLib.powerSignature().program().create();
 		PowervizPlantOperationalState onLib = getAnalysis(stype1.libraryDevice(), "on");
 		ValueResourceHelper.setIfNew(onLib.name(), "in Betrieb");
 		ValueResourceHelper.setIfNew(onLib.levelToPlot(), 100);
+		onLib.powerSignature().program().create();
 		PowervizPlantOperationalState heatLib = getAnalysis(stype1.libraryDevice(), "heatUpPop");
 		ValueResourceHelper.setIfNew(heatLib.name(), "HeatingUp PopcornMaker");
 		ValueResourceHelper.setIfNew(heatLib.levelToPlot(), 200);
+		heatLib.powerSignature().program().create();
 		heatLib.occursDuringStates().create();
 		heatLib.occursDuringStates().add(onLib);
 		ValueResourceHelper.setIfNewCelsius(offLib.typicalTemperatureOnSurface(),
@@ -122,8 +125,26 @@ public class PowerbizBaseController {
 		ValueResourceHelper.setIfNew(stype2.libraryDevice().name(), "Hochregallager_XY_LibDev");
 		stype2.libraryDevice().serialType().setAsReference(stype2);
 		stype2.libraryDevice().stateAnalysisData().create();
-		getAnalysis(stype2.libraryDevice(), "off");
-		getAnalysis(stype2.libraryDevice(), "on");
+		
+		PowervizPlantOperationalState offLib2 = getAnalysis(stype2.libraryDevice(), "off");
+		offLib2.powerSignature().program().create();
+		ValueResourceHelper.setIfNew(offLib2.name(), "Aus/Low-Standby");
+		ValueResourceHelper.setIfNew(offLib2.levelToPlot(), 0);
+		
+		PowervizPlantOperationalState onLib2 = getAnalysis(stype2.libraryDevice(), "on");
+		ValueResourceHelper.setIfNew(onLib2.name(), "Energie-optimierter Betrieb");
+		ValueResourceHelper.setIfNew(onLib2.levelToPlot(), 100);
+		onLib2.powerSignature().program().create();
+
+		PowervizPlantOperationalState onStdLib2 = getAnalysis(stype2.libraryDevice(), "onStd");
+		ValueResourceHelper.setIfNew(onStdLib2.name(), "Standard Betrieb");
+		ValueResourceHelper.setIfNew(onStdLib2.levelToPlot(), 200);
+		onStdLib2.powerSignature().program().create();
+
+		PowervizPlantOperationalState powerOn2 = getAnalysis(stype2.libraryDevice(), "powerOn");
+		ValueResourceHelper.setIfNew(powerOn2.name(), "Einschalten");
+		ValueResourceHelper.setIfNew(powerOn2.levelToPlot(), 50);
+		powerOn2.powerSignature().program().create();
 		
 		PowervizPlant splant1 = getPlant("PopcornMaker_1");
 		ValueResourceHelper.setIfNew(splant1.name(), "Popcorn-Maker (do not eat)");
