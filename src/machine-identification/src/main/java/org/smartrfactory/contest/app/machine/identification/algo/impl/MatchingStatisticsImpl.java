@@ -47,12 +47,33 @@ public class MatchingStatisticsImpl implements MatchingStatistics{
 
 	@Override
 	public Long endtime() {
-		return endtime();
+		return endTime;
 	}
 
 	@Override
 	public int compareTo(MatchingStatistics o) {
 		return (int) (avDev - o.meanSquareDeviation());
 	}
+	
+	@Override
+	public int hashCode() {
+		return timeSeries.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this)
+			return true;
+		if (!(obj instanceof MatchingStatistics))
+			return false;
+		return timeSeries.equals(((MatchingStatistics) obj).timeSeries());
+	}
+	
+	@Override
+	public float getTargetAverageValue() {
+		return averageTarget;
+	}
+	
+	
 	
 }
