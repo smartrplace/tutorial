@@ -24,6 +24,14 @@ public class ModbusMeterPattern<M extends ModbusMeter> extends ResourcePattern<M
 		}
 		
 	}
+	
+	public static class PhoenixPattern extends ModbusMeterPattern<PhoenixDevice> {
+		
+		public PhoenixPattern(Resource match) {
+			super(match);
+		}
+		
+	}
 
 	public ModbusMeterPattern(Resource match) {
 		super(match);

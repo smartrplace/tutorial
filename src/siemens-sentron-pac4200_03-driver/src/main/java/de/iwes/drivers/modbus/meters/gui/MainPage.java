@@ -14,9 +14,11 @@ import org.ogema.core.resourcemanager.AccessPriority;
 import org.ogema.model.communication.ModbusCommunicationInformation;
 
 import de.iwes.drivers.modbus.elmeter.model.ModbusMeterPattern;
+import de.iwes.drivers.modbus.elmeter.model.ModbusMeterPattern.PhoenixPattern;
 import de.iwes.drivers.modbus.elmeter.model.ModbusMeterPattern.SentronPattern;
 import de.iwes.drivers.modbus.elmeter.model.ModbusMeterPattern.WeidmuellerPattern;
 import de.iwes.drivers.modbus.meter.hl.ModbusMeterDriver;
+import de.iwes.drivers.modbus.meter.hl.PhoenixCreator;
 import de.iwes.drivers.modbus.meter.hl.SentronCreator;
 import de.iwes.drivers.modbus.meter.hl.WeidmuellerCreator;
 import de.iwes.widgets.api.widgets.WidgetPage;
@@ -62,7 +64,7 @@ public class MainPage {
 		
 		typeSelector = new TemplateDropdown<>(page, "typeSelector");
 		final List<Class<? extends ModbusMeterPattern<?>>> types = Arrays.<Class<? extends ModbusMeterPattern<?>>> asList(
-				SentronPattern.class, WeidmuellerPattern.class);
+				SentronPattern.class, WeidmuellerPattern.class, PhoenixPattern.class);
 		typeSelector.setDefaultItems(types);
 		typeSelector.setTemplate(new DisplayTemplate<Class<? extends ModbusMeterPattern<?>>>() {
 			
@@ -121,8 +123,10 @@ public class MainPage {
 				meter.modbus.comAddress().port().<IntegerResource> create().setValue(port);
 				if (type == SentronPattern.class)
 					SentronCreator.create((SentronPattern) meter);
-				if (type == WeidmuellerPattern.class)
+				else if (type == WeidmuellerPattern.class)
 					WeidmuellerCreator.create((WeidmuellerPattern) meter);
+				else if (type == PhoenixPattern.class)
+					PhoenixCreator.create((PhoenixPattern) meter);
 				meter.model.activate(true);
 				ModbusMeterDriver.logger.info("New Modbus meter device created: {}", meter.model);
 				alert.showAlert("New Modbus meter created: " + meter.modbus, true, req);

@@ -80,8 +80,10 @@ public class MeterController implements Callable<MatchingResult> {
 			}
 			final NavigableMap<MatchingStatistics, ReadOnlyTimeSeries> results = 
 					algo.getMatches(schedules, meter.connection().powerSensor().reading(), System.currentTimeMillis());
-			if (results == null || results.isEmpty()) 
+			if (results == null || results.isEmpty()) {
+				MachineIdentificationApp.logger.error("Matching result is null for meter {}",meter);
 				return null;
+			}
 			return new MatchingResultImpl(meter.connection().powerSensor().reading(), results);
 		} finally {
 			running = false;

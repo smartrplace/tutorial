@@ -67,9 +67,9 @@ public class Matcher {
 			MachineIdentificationApp.logger.info("Too few data points for matching in target resource {}",logAccess.getPath());
 			return;
 		}
-		boolean constant = islogDataConstant(logAccess.iterator(startTime, now));
-		MachineIdentificationApp.logger.trace("Log data is constant: {}",constant);
-		if (!constant) {
+//		boolean constant = islogDataConstant(logAccess.iterator(startTime, now));
+//		MachineIdentificationApp.logger.trace("Log data is constant: {}",constant);
+//		if (!constant) {
 			for (ReadOnlyTimeSeries timeseries : libraryStates) {
 				try {
 					final MatchingStatisticsImpl eval = getMeanSquareDev(timeseries,now);
@@ -84,9 +84,9 @@ public class Matcher {
 					continue;
 				}
 			}
-		}
-		else 
-			MachineIdentificationApp.logger.debug("Registered log data is constant, waiting at least another step");
+//		}
+//		else 
+//			MachineIdentificationApp.logger.debug("Registered log data is constant, waiting at least another step");
 		if (now - started > MIN_DATA_REQUIRED && results.size() >= 2) {
 			final Iterator<MatchingStatisticsImpl> it = results.navigableKeySet().iterator();
 			final MatchingStatisticsImpl best = it.next();
@@ -104,7 +104,7 @@ public class Matcher {
 		}
 		
 		if (now - started > MAX_WAIT_TIME) {
-			MachineIdentificationApp.logger.debug("Machine identification timed out. Number of potential matches: {}",results.size());
+			MachineIdentificationApp.logger.info("Machine identification timed out. Number of potential matches: {}",results.size());
 			return;
 		}
 		try {
@@ -181,7 +181,7 @@ public class Matcher {
 			float val2 = sv2.getValue().getFloatValue();
 			sum1 += val1;
 			sum2 += val2;
-			sumSquares += Math.pow(val1-val2,2);
+			sumSquares += (val1-val2)*(val1-val2);
 			lastTimestamp = dataPoint.getTimestamp();
 		}
 		if (cnt ==0) {

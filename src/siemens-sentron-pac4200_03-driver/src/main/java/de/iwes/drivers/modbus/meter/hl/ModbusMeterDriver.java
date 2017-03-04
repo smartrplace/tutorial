@@ -57,6 +57,19 @@ public class ModbusMeterDriver implements Application {
 			int nrRegisters,
 			boolean read,
 			boolean write) {
+		addCommunicationInfo(resource, commInfo, register, registerType, dataType, nrRegisters, read, write, 1F);
+	}
+	
+	public static void addCommunicationInfo(
+			Resource resource, 
+			ModbusCommunicationInformation commInfo, 
+			int register,
+			RegisterType registerType,
+			DataType dataType,
+			int nrRegisters,
+			boolean read,
+			boolean write,
+			float factor) {
 		ModbusCommunicationInformation comm = resource.getSubResource("communicationInfo", ModbusCommunicationInformation.class).create();
 		ModbusAddress address = comm.comAddress().create();
 		address.host().<StringResource> create().setValue(commInfo.comAddress().host().getValue());
@@ -68,7 +81,7 @@ public class ModbusMeterDriver implements Application {
 		address.unitId().<IntegerResource> create().setValue(1);
 		address.littleEndianRegisterOrder().<BooleanResource> create().setValue(false);
 		comm.offset().<FloatResource> create().setValue(0);
-		comm.factor().<FloatResource> create().setValue(1);
+		comm.factor().<FloatResource> create().setValue(factor);
 		address.readable().<BooleanResource> create().setValue(read);
 		address.writeable().<BooleanResource> create().setValue(write);
 		if (resource instanceof SingleValueResource)
