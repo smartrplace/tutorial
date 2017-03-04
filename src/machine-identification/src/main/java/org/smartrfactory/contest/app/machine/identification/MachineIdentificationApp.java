@@ -6,7 +6,11 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.ogema.core.application.Application;
 import org.ogema.core.application.ApplicationManager;
@@ -15,6 +19,8 @@ import org.ogema.model.metering.ElectricityMeter;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.http.HttpService;
+import org.osgi.service.http.NamespaceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingAlgorithm;
@@ -32,6 +38,10 @@ public class MachineIdentificationApp implements Application {
 	private ApplicationManager am;
 	private ExecutorService exec;
 	private ServiceRegistration<ShellCommands> shell;
+	private HttpServlet servlet;
+	
+	@Reference
+	HttpService http;
 
     /*
      * This is the entry point to the application.
@@ -45,6 +55,12 @@ public class MachineIdentificationApp implements Application {
 		props.put("osgi.command.scope", "factory");
 		props.put("osgi.command.function", new String[] { "startIdentification", "identificationResults" });
 		shell = ctx.registerService(ShellCommands.class, new ShellCommands(this), props);
+		servlet = new IdentificationServlet(this);
+		try {
+			http.registerServlet(servletPath, servlet, null, null);
+		} catch (ServletException | NamespaceException e) {
+			throw new RuntimeException(e);
+		}
      }
 
      /*
@@ -52,6 +68,12 @@ public class MachineIdentificationApp implements Application {
      */
     @Override
     public void stop(AppStopReason reason) {
+    	if (servlet != null) {
+    		try {
+    			http.unregister(servletPath);
+    		} catch (Exception e) {}
+    	}
+    	servlet = null;
     	synchronized (controllers) {
     		controllers.clear();
     	}

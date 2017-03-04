@@ -17,6 +17,7 @@ public interface MatchingStatistics extends Comparable<MatchingStatistics> {
 	 * 
 	 */
 	float meanSquareDeviation();
+	float getTargetAverageValue();
 	long startTime();
 	Long endtime(); // may be null
 	

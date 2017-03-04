@@ -16,6 +16,8 @@ public class MatchingStatisticsImpl implements MatchingStatistics{
 	
 	public MatchingStatisticsImpl(ReadOnlyTimeSeries timeSeries,FloatResource target, float avDev, long startTime, long endTime,
 			float avTarget, float avSignature) {
+		// FIXME
+		System.out.println("    New mathcing stats " + avDev + ", time series "  +timeSeries);
 		this.timeSeries = timeSeries;
 		this.target = target;
 		this.startTime = startTime;
@@ -54,5 +56,26 @@ public class MatchingStatisticsImpl implements MatchingStatistics{
 	public int compareTo(MatchingStatistics o) {
 		return (int) (avDev - o.meanSquareDeviation());
 	}
+	
+	@Override
+	public int hashCode() {
+		return timeSeries.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this)
+			return true;
+		if (!(obj instanceof MatchingStatistics))
+			return false;
+		return timeSeries.equals(((MatchingStatistics) obj).timeSeries());
+	}
+	
+	@Override
+	public float getTargetAverageValue() {
+		return averageTarget;
+	}
+	
+	
 	
 }
