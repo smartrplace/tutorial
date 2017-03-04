@@ -8,7 +8,6 @@ import org.ogema.tools.resource.util.ResourceUtils;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizBaseConfig;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlant;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantOperationalState;
-import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantOperationalStateAnalysis;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantType;
 
 import de.iwes.util.resource.ValueResourceHelper;
@@ -56,30 +55,32 @@ public class PowerbizBaseController {
 			
 		ValueResourceHelper.setIfNew(appConfigData.factoryId(), "SmartFactory OWL");
 		appConfigData.availablePlants().create();
+		//appConfigData.unIdentfiedMeters().create();
+		//List<ElectricityMeter> meters = appMan.getResourceAccess().getResources(ElectricityMeter.class);
+		//for(ElectricityMeter m: meters) {
+		//	appConfigData.unIdentfiedMeters().add(m);
+		//}
 		appConfigData.knownTypes().create();
-		appConfigData.knownStates().create();
-		PowervizPlantOperationalState offState = getState("off");
-		ValueResourceHelper.setIfNew(offState.name(), "Aus/Low-Standby");
-		ValueResourceHelper.setIfNew(offState.levelToPlot(), 0);
-		PowervizPlantOperationalState onState = getState("on");
-		ValueResourceHelper.setIfNew(onState.name(), "in Betrieb");
-		ValueResourceHelper.setIfNew(onState.levelToPlot(), 100);
-		PowervizPlantOperationalState heatUpPopCState = getState("heatUpPop");
-		ValueResourceHelper.setIfNew(heatUpPopCState.name(), "HeatingUp PopcornMaker");
-		ValueResourceHelper.setIfNew(heatUpPopCState.levelToPlot(), 200);
-		heatUpPopCState.occursDuringStates().create();
-		heatUpPopCState.occursDuringStates().add(onState);
-		heatUpPopCState.relevantPlantTypes().create();
+		//PowervizPlantOperationalState offState = getState("off");
+		//PowervizPlantOperationalState onState = getState("on");
+		//PowervizPlantOperationalState heatUpPopCState = getState("heatUpPop");
 		
 		PowervizPlantType stype1 = getType("PopcornMakerIOSB");
 		ValueResourceHelper.setIfNew(stype1.manufacturer(), "SmartFactory OWL_somebody");
-		heatUpPopCState.relevantPlantTypes().add(stype1);
 		ValueResourceHelper.setIfNew(stype1.libraryDevice().name(), "PopcornMakerIOSB_LibDev");
 		stype1.libraryDevice().serialType().setAsReference(stype1);
 		stype1.libraryDevice().stateAnalysisData().create();
-		PowervizPlantOperationalStateAnalysis offLib = getAnalysis(stype1.libraryDevice(), offState);
-		PowervizPlantOperationalStateAnalysis onLib = getAnalysis(stype1.libraryDevice(), onState);
-		PowervizPlantOperationalStateAnalysis heatLib = getAnalysis(stype1.libraryDevice(), heatUpPopCState);
+		PowervizPlantOperationalState offLib = getAnalysis(stype1.libraryDevice(), "off");
+		ValueResourceHelper.setIfNew(offLib.name(), "Aus/Low-Standby");
+		ValueResourceHelper.setIfNew(offLib.levelToPlot(), 0);
+		PowervizPlantOperationalState onLib = getAnalysis(stype1.libraryDevice(), "on");
+		ValueResourceHelper.setIfNew(onLib.name(), "in Betrieb");
+		ValueResourceHelper.setIfNew(onLib.levelToPlot(), 100);
+		PowervizPlantOperationalState heatLib = getAnalysis(stype1.libraryDevice(), "heatUpPop");
+		ValueResourceHelper.setIfNew(heatLib.name(), "HeatingUp PopcornMaker");
+		ValueResourceHelper.setIfNew(heatLib.levelToPlot(), 200);
+		heatLib.occursDuringStates().create();
+		heatLib.occursDuringStates().add(onLib);
 		ValueResourceHelper.setIfNewCelsius(offLib.typicalTemperatureOnSurface(),
 				19.5f);
 		ValueResourceHelper.setIfNewCelsius(onLib.typicalTemperatureOnSurface(),
@@ -95,23 +96,23 @@ public class PowerbizBaseController {
 		ValueResourceHelper.setIfNew(stype2.libraryDevice().name(), "Hochregallager_XY_LibDev");
 		stype2.libraryDevice().serialType().setAsReference(stype2);
 		stype2.libraryDevice().stateAnalysisData().create();
-		getAnalysis(stype2.libraryDevice(), offState);
-		getAnalysis(stype2.libraryDevice(), onState);
+		getAnalysis(stype2.libraryDevice(), "off");
+		getAnalysis(stype2.libraryDevice(), "on");
 		
 		PowervizPlant splant1 = getPlant("PopcornMaker_1");
 		ValueResourceHelper.setIfNew(splant1.name(), "Popcorn-Maker (do not eat)");
 		splant1.serialType().setAsReference(stype1);
-		ValueResourceHelper.setIfNew(splant1.setPlantToOperationState().stateControl(), false);
-		ValueResourceHelper.setIfNew(splant1.setPlantToOperationState().controllingApplication(),
-				"powerviz-base");
-		splant1.stateToSetTo().setAsReference(onState);
+		//ValueResourceHelper.setIfNew(splant1.setPlantToOperationState().stateControl(), false);
+		//ValueResourceHelper.setIfNew(splant1.setPlantToOperationState().controllingApplication(),
+		//		"powerviz-base");
+		//splant1.stateToSetTo().setAsReference(onLib);
 		splant1.meter().setAsReference(popMeter);
 		splant1.stateAnalysisData().create();
-		PowervizPlantOperationalStateAnalysis offAna1 = getAnalysis(splant1, offState);
+		PowervizPlantOperationalState offAna1 = getAnalysis(splant1, "off");
 		offAna1.stateActiveTimes().historicalData().create();
-		PowervizPlantOperationalStateAnalysis onAna1 = getAnalysis(splant1, onState);
+		PowervizPlantOperationalState onAna1 = getAnalysis(splant1, "on");
 		onAna1.stateActiveTimes().historicalData().create();
-		PowervizPlantOperationalStateAnalysis heatAna1 = getAnalysis(splant1, heatUpPopCState);
+		PowervizPlantOperationalState heatAna1 = getAnalysis(splant1, "heatUpPop");
 		heatAna1.stateActiveTimes().historicalData().create();
 		//ValueResourceHelper.setIfNew(splant1.energyConsumption().dayValue(), 0.25f*3600000);
 		//ValueResourceHelper.setIfNew(splant1.energyConsumption().hourValue(), 1.5f*3600000);
@@ -121,15 +122,16 @@ public class PowerbizBaseController {
 		appConfigData.activate(true);
     }
     
-    public PowervizPlantOperationalStateAnalysis getAnalysis(PowervizPlant plant, PowervizPlantOperationalState state) {
-		for(PowervizPlantOperationalStateAnalysis ana: plant.stateAnalysisData().getAllElements()) {
-			if(ana.stateAnalyzed().equalsLocation(state)) {
+    public PowervizPlantOperationalState getAnalysis(PowervizPlant plant, String id) {
+		for(PowervizPlantOperationalState ana: plant.stateAnalysisData().getAllElements()) {
+			if(ana.id().getValue().equals(id)) {
 				return ana;
 			}
 		}
-    	PowervizPlantOperationalStateAnalysis result = plant.stateAnalysisData().addDecorator(state.id().getValue(),
-				PowervizPlantOperationalStateAnalysis.class);
-		result.stateAnalyzed().setAsReference(state);
+    	PowervizPlantOperationalState result = plant.stateAnalysisData().addDecorator(id,
+				PowervizPlantOperationalState.class);
+    	result.id().create();
+		result.id().setValue(id);
     	return result;
     }
     
@@ -149,7 +151,7 @@ public class PowerbizBaseController {
     			ResourceUtils.getValidResourceName(id),
     			PowervizPlant.class); 		
     }
-    public PowervizPlantOperationalState getState(String id) {
+    /*public PowervizPlantOperationalState getState(String id) {
  		for(PowervizPlantOperationalState t: appConfigData.knownStates().getAllElements()) {
  			if(t.id().getValue().equals(id)) return t;
     	}
@@ -159,7 +161,7 @@ public class PowerbizBaseController {
     	result.id().create();
     	result.id().setValue(id);
     	return result;
-    }
+    }*/
     
     /*
      * register ResourcePatternDemands. The listeners will be informed about new and disappearing

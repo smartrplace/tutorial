@@ -26,12 +26,12 @@ public interface PowervizPlant extends Data {
 	
 	PowervizPlantType serialType();
 	
-	ResourceList<PowervizPlantOperationalStateAnalysis> stateAnalysisData();
+	ResourceList<PowervizPlantOperationalState> stateAnalysisData();
 	/** Idea: State analysis based on {@link PowervizPlantOperationalState#levelToPlot()}*/
 	FloatResource stateGraph();
 	
-	Action setPlantToOperationState();
-	PowervizPlantOperationalState stateToSetTo();
+	//Action setPlantToOperationState();
+	//PowervizPlantOperationalState stateToSetTo();
 	
 	/**depending on device type the sensor should be installed at a position where most
 	 * critical temperature can be determined*/

@@ -2,6 +2,7 @@ package org.smartrfactory.contest.app.powerbizbase.config;
 
 import org.ogema.core.model.ResourceList;
 import org.ogema.core.model.simple.StringResource;
+import org.ogema.model.metering.ElectricityMeter;
 import org.ogema.model.prototypes.Configuration;
 
 /** 
@@ -11,7 +12,8 @@ public interface PowervizBaseConfig extends Configuration {
 
 	ResourceList<PowervizPlant> availablePlants();
 	ResourceList<PowervizPlantType> knownTypes();
-	ResourceList<PowervizPlantOperationalState> knownStates();
+//	ResourceList<PowervizPlantOperationalState> knownStates();
+//	ResourceList<ElectricityMeter> unIdentfiedMeters();
 	
 	StringResource factoryId();
 }
