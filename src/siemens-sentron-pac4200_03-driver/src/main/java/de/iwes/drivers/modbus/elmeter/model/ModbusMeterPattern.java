@@ -17,7 +17,7 @@ public class ModbusMeterPattern<M extends ModbusMeter> extends ResourcePattern<M
 		
 	}
 	
-	public static class WeidmuellerPattern extends ModbusMeterPattern<SentronDevice> {
+	public static class WeidmuellerPattern extends ModbusMeterPattern<WeidmuellerDevice> {
 		
 		public WeidmuellerPattern(Resource match) {
 			super(match);
