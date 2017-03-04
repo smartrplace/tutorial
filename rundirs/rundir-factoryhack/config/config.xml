@@ -184,7 +184,7 @@
 		<bundle dir="bin/simulations" groupId="de.iwes.sim" artifactId="roomsimulation-service" version="&widgets-version;" startLevel="23" /> 	
 		<bundle dir="bin/simulations" groupId="de.iwes.sim" artifactId="electrical-simple-simulations" version="&widgets-version;" startLevel="24" />
   		<bundle dir="bin/simulations" groupId="de.iwes.sim" artifactId="roominside-standard-simulations" version="&widgets-version;" startLevel="24" />
-  		<bundle dir="bin/simulations" groupId="org.ogema.sim" artifactId="simple-devices" version="&widgets-version;" startLevel="24" />
+   	    <bundle dir="bin/simulations" groupId="org.smartrplace.sim" artifactId="simple-devices" version="2.1.1-SNAPSHOT" startLevel="23" />
 		
 		
  		<!-- Advanced simulation including room simulation service, old design (configuration via decorators) -->	
@@ -226,9 +226,6 @@
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="zwave" version="&ogema-version;" startLevel="25"/>
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="zwave-hl" version="&ogema-version;" startLevel="25"/>
 
-		<!-- Philips Hue; may also work with ZigBee driver instead -->
-		<bundle dir="bin/drivers" groupId="de.iwes.drivers" artifactId="hue-connector" version="&widgets-version;" startLevel="25" />		
-
 		<!-- Remote REST connector --> 
 		<bundle dir="bin/drivers" groupId="org.ogema.drivers" artifactId="remote-rest-connector" version="&ogema-version;"  startLevel="25"/>
 		<bundle dir="bin/drivers" groupId="de.iwes.ogema" artifactId="remote-rest-configurator" version="&ogema-version;"  startLevel="25"/>
@@ -264,10 +261,10 @@
      	<bundle dir="bin/apps" groupId="de.iwes.widgets" artifactId="widget-test-2" version="&widgets-version;" startLevel="30" />      	
      	<bundle dir="bin/apps" groupId="de.iwes.widgets" artifactId="widgets-overview" version="&widgets-version;" startLevel="30" /> 
 		
-	     	<bundle dir="bin/apps" groupId="de.iwes.apps" artifactId="admin-apps" version="&widgets-version;" startLevel="30" />
-   			<bundle dir="bin/commons" groupId="org.apache.commons" artifactId="commons-csv" version="1.4" startLevel="3"/>
-	     	<bundle dir="bin/apps" groupId="org.smartrplace.tools" artifactId="schedule-management" version="&widgets-version;" startLevel="30" /> 
+   		<bundle dir="bin/commons" groupId="org.apache.commons" artifactId="commons-csv" version="1.4" startLevel="3"/>
+	    <bundle dir="bin/apps" groupId="org.smartrplace.tools" artifactId="schedule-management" version="&widgets-version;" startLevel="30" /> 
 		
+	    <bundle dir="bin/apps" groupId="org.smartrfactory.contest.app" artifactId="powerviz-base" version="1.0.0-SNAPSHOT" startLevel="30" /> 
 		 
     </bundles>
 

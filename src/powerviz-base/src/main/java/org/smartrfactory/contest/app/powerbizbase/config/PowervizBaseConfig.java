@@ -7,12 +7,11 @@ import org.ogema.model.prototypes.Configuration;
 /** 
  * The global configuration resource type for this app.
  */
-public interface PowerbizBaseConfig extends Configuration {
+public interface PowervizBaseConfig extends Configuration {
 
-	ResourceList<PowerbizBaseProgramConfig> availablePrograms();
+	ResourceList<PowervizPlant> availablePlants();
+	ResourceList<PowervizPlantType> knownTypes();
+	ResourceList<PowervizPlantOperationalState> knownStates();
 	
-	StringResource sampleElement();
-	
-	// TODO add global settings
-
+	StringResource factoryId();
 }
