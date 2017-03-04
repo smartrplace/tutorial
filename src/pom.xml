@@ -26,6 +26,7 @@
   <!-- Sub-projects -->
     <modules>
 		<module>powerviz-base</module>
+		<module>siemens-sentron-pac4200_03-driver</module>
     </modules>
 
     <build>
