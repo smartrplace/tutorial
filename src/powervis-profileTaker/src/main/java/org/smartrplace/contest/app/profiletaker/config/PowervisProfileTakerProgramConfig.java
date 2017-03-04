@@ -1,7 +1,7 @@
 package org.smartrplace.contest.app.profiletaker.config;
 
+import org.ogema.core.model.simple.FloatResource;
 import org.ogema.core.model.simple.StringResource;
-import org.ogema.core.model.simple.TimeResource;
 import org.ogema.model.prototypes.Configuration;
 
 /** 
@@ -9,9 +9,9 @@ import org.ogema.model.prototypes.Configuration;
  */
 public interface PowervisProfileTakerProgramConfig extends Configuration {
 
-	StringResource programId();
+	StringResource profileId();
 	
-	TimeResource maxDuration();
+	FloatResource backupSignature();
 	
 	// TODO add required setting resources for programs
 

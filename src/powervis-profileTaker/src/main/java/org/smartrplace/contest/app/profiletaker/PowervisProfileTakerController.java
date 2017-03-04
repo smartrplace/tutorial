@@ -41,11 +41,10 @@ public class PowervisProfileTakerController {
 		}
 		else {
 			appConfigData = (PowervisProfileTakerConfig) appMan.getResourceManagement().createResource(configResourceDefaultName, PowervisProfileTakerConfig.class);
-			appConfigData.sampleElement().create();
-			appConfigData.sampleElement().setValue("Example");
 			appConfigData.activate(true);
 			appMan.getLogger().debug("{} started with new config resource", getClass().getName());
 		}
+		appConfigData.availablePrograms().create();
     }
     
     /*
