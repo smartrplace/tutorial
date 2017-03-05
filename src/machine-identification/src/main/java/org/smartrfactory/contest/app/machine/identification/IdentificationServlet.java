@@ -18,7 +18,6 @@ import org.ogema.core.model.schedule.AbsoluteSchedule;
 import org.ogema.core.model.schedule.Schedule;
 import org.ogema.core.recordeddata.RecordedData;
 import org.ogema.core.recordeddata.ReductionMode;
-import org.ogema.core.timeseries.ReadOnlyTimeSeries;
 import org.ogema.core.tools.SerializationManager;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingResult;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingStatistics;
@@ -124,7 +123,9 @@ public class IdentificationServlet extends HttpServlet {
 			final MatchingResult result;
 			try {
 				 result = future.get();
-			} catch (InterruptedException | ExecutionException e) {
+				 if (result == null) 
+					 throw new NullPointerException("Result could not be determined");
+			} catch (InterruptedException | ExecutionException | NullPointerException e) {
 				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,e.toString());
 				return;
 			}

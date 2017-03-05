@@ -68,9 +68,9 @@ public class Matcher {
 			MachineIdentificationApp.logger.info("Too few data points for matching in target resource {}",logAccess.getPath());
 			return;
 		}
-		boolean constant = islogDataConstant(logAccess.iterator(startTime, now));
-		MachineIdentificationApp.logger.trace("Log data is constant: {}",constant);
-		if (!constant) {
+//		boolean constant = islogDataConstant(logAccess.iterator(startTime, now));
+//		MachineIdentificationApp.logger.trace("Log data is constant: {}",constant);
+//		if (!constant) {
 			for (ReadOnlyTimeSeries timeseries : libraryStates) {
 				try {
 					final MatchingStatisticsImpl eval = getMeanSquareDev(timeseries,now);
@@ -85,9 +85,9 @@ public class Matcher {
 					continue;
 				}
 			}
-		}
-		else 
-			MachineIdentificationApp.logger.debug("Registered log data is constant, waiting at least another step");
+//		}
+//		else 
+//			MachineIdentificationApp.logger.debug("Registered log data is constant, waiting at least another step");
 		if (now - started > MIN_DATA_REQUIRED && results.size() >= 2) {
 			final Iterator<MatchingStatisticsImpl> it = results.navigableKeySet().iterator();
 			final MatchingStatisticsImpl best = it.next();
@@ -105,7 +105,7 @@ public class Matcher {
 		}
 		
 		if (now - started > MAX_WAIT_TIME) {
-			MachineIdentificationApp.logger.debug("Machine identification timed out. Number of potential matches: {}",results.size());
+			MachineIdentificationApp.logger.info("Machine identification timed out. Number of potential matches: {}",results.size());
 			return;
 		}
 		try {
@@ -171,11 +171,11 @@ public class Matcher {
 		long lastTimestamp = 0;
 		
 		//take into account shifts
-		float[] sum1shift = new float[MAX_SHIFT];
+		/*float[] sum1shift = new float[MAX_SHIFT];
 		float[] sum2shift = new float[MAX_SHIFT];
 		float[] sumSquaresShift = new float[MAX_SHIFT];
 		int[] cntShift = new int[MAX_SHIFT];
-		
+		*/
 		final MultiTimeSeriesIterator multiIt = MultiTimeSeriesUtils.getMultiIterator(Arrays.asList(signature.iterator(startTime, endTime) , logData.iterator(startTime, endTime)));
 		while (multiIt.hasNext()) {
 			final SampledValueDataPoint dataPoint = multiIt.next();
@@ -190,12 +190,12 @@ public class Matcher {
 			sum2 += val2;
 			float square = (val1-val2)*(val1-val2); //Math.pow(val1-val2,2); 
 			sumSquares += square;
-			for(int i=0; (i<(cnt-1))&&(i<MAX_SHIFT); i++) {
+			/*for(int i=0; (i<(cnt-1))&&(i<MAX_SHIFT); i++) {
 				sum1shift[i] += val1;
 				sum2shift[i] += val2;
 				sumSquaresShift[i] += square;
 				(cntShift[i])++;
-			}
+			}*/
 			lastTimestamp = dataPoint.getTimestamp();
 		}
 		if (cnt ==0) {
@@ -206,7 +206,9 @@ public class Matcher {
 		float av2 = sum2/cnt;
 		float avDev = (float) Math.sqrt(sumSquares/cnt);
 		MatchingStatisticsImpl baseResult = new MatchingStatisticsImpl(signatureOriginal, target, avDev, startTime, lastTimestamp, av2, av1);
+		/*int limit = cnt/2;
 		for(int i=0; (i<(cnt-1))&&(i<MAX_SHIFT); i++) {
+			if(cntShift[i] < limit) break;
 			av1 = sum1shift[i]/cntShift[i];
 			av2 = sum2shift[i]/cntShift[i];
 			avDev = (float) Math.sqrt(sumSquaresShift[i]/cntShift[i]);
@@ -214,7 +216,7 @@ public class Matcher {
 			if(shiftResult.compareTo(baseResult) < 0) {
 				baseResult = shiftResult;
 			}
-		}
+		}*/
 		
 		return baseResult;
 	}
