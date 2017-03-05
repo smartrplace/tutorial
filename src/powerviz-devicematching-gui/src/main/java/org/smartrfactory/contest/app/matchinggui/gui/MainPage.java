@@ -53,13 +53,14 @@ public class MainPage {
 					text = "n/a";
 				}
 				vh.stringLabel("Device", id, text, row);
-				vh.floatLabel("Power (W)", id, meter.connection().powerSensor().reading(),
+				vh.floatLabel("Power_W", id, meter.connection().powerSensor().reading(),
 						row, null);
+				vh.linkingButton("match", id, meter, row, "Start Matching", "/org/smartrfactory/app/identificiation&meterId="+meter.getLocation());
 				return row;
 			}
 		};
 		meterTable = new ResourceTable<ElectricityMeter>(
-				page, "meterTable", rowTemplate );
+				page, "meterTable", false, rowTemplate, ElectricityMeter.class, appMan);
 		//init all widgets
 
 		page.append(header);
