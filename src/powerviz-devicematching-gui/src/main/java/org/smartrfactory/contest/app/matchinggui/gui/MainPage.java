@@ -26,7 +26,7 @@ public class MainPage {
 	public MainPage(final WidgetPage<?> page, final ApplicationManager appMan) {
 		this.page = page;
 
-		Header header = new Header(page, "header", "Template Page");
+		Header header = new Header(page, "header", "Connected Meters");
 		header.addDefaultStyle(HeaderData.CENTERED);
 
 		RowTemplate<ElectricityMeter> rowTemplate =
@@ -48,14 +48,14 @@ public class MainPage {
 				String text;
 				PowervizPlant device = meter.getSubResource("device", PowervizPlant.class);
 				if(device.exists()) {
-					text = device.getName();
+					text = device.getLocation();
 				} else {
 					text = "n/a";
 				}
 				vh.stringLabel("Device", id, text, row);
 				vh.floatLabel("Power_W", id, meter.connection().powerSensor().reading(),
 						row, null);
-				vh.linkingButton("match", id, meter, row, "Start Matching", "/org/smartrfactory/app/identificiation&meterId="+meter.getLocation());
+				//vh.linkingButton("match", id, meter, row, "Start Matching", "/org/smartrfactory/app/identificiation&meterId="+meter.getLocation());
 				return row;
 			}
 		};
