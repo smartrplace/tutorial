@@ -28,6 +28,7 @@ public class Matcher {
 	private final static long WAIT_TIME_BETWEEN_ITERATIONS = 5000;
 	private final static long MIN_DATA_REQUIRED = 15000;
 	private final static long MAX_WAIT_TIME = 60000;
+	public final static int MAX_SHIFT = 100;
 	final List<ReadOnlyTimeSeries> libraryStates = new ArrayList<>();
 	private final Map<ReadOnlyTimeSeries,ReadOnlyTimeSeries> signaturesMap = new HashMap<>();
 	final FloatResource target;
@@ -169,6 +170,12 @@ public class Matcher {
 		int cnt =0;
 		long lastTimestamp = 0;
 		
+		//take into account shifts
+		float[] sum1shift = new float[MAX_SHIFT];
+		float[] sum2shift = new float[MAX_SHIFT];
+		float[] sumSquaresShift = new float[MAX_SHIFT];
+		int[] cntShift = new int[MAX_SHIFT];
+		
 		final MultiTimeSeriesIterator multiIt = MultiTimeSeriesUtils.getMultiIterator(Arrays.asList(signature.iterator(startTime, endTime) , logData.iterator(startTime, endTime)));
 		while (multiIt.hasNext()) {
 			final SampledValueDataPoint dataPoint = multiIt.next();
@@ -181,7 +188,14 @@ public class Matcher {
 			float val2 = sv2.getValue().getFloatValue();
 			sum1 += val1;
 			sum2 += val2;
-			sumSquares += Math.pow(val1-val2,2);
+			float square = (val1-val2)*(val1-val2); //Math.pow(val1-val2,2); 
+			sumSquares += square;
+			for(int i=0; (i<(cnt-1))&&(i<MAX_SHIFT); i++) {
+				sum1shift[i] += val1;
+				sum2shift[i] += val2;
+				sumSquaresShift[i] += square;
+				(cntShift[i])++;
+			}
 			lastTimestamp = dataPoint.getTimestamp();
 		}
 		if (cnt ==0) {
@@ -190,8 +204,19 @@ public class Matcher {
 		}
 		float av1 = sum1/cnt;
 		float av2 = sum2/cnt;
-		float avDev = (float) Math.sqrt(sumSquares);
-		return new MatchingStatisticsImpl(signatureOriginal, target, avDev, startTime, lastTimestamp, av2, av1);
+		float avDev = (float) Math.sqrt(sumSquares/cnt);
+		MatchingStatisticsImpl baseResult = new MatchingStatisticsImpl(signatureOriginal, target, avDev, startTime, lastTimestamp, av2, av1);
+		for(int i=0; (i<(cnt-1))&&(i<MAX_SHIFT); i++) {
+			av1 = sum1shift[i]/cntShift[i];
+			av2 = sum2shift[i]/cntShift[i];
+			avDev = (float) Math.sqrt(sumSquaresShift[i]/cntShift[i]);
+			MatchingStatisticsImpl shiftResult = new MatchingStatisticsImpl(signatureOriginal, target, avDev, startTime, lastTimestamp, av2, av1);
+			if(shiftResult.compareTo(baseResult) < 0) {
+				baseResult = shiftResult;
+			}
+		}
+		
+		return baseResult;
 	}
 	
 	final int getSize(Iterator<?> it) {
