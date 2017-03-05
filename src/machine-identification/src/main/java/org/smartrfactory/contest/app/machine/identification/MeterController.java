@@ -8,16 +8,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 import org.ogema.core.application.ApplicationManager;
+import org.ogema.core.model.Resource;
+import org.ogema.core.model.schedule.Schedule;
 import org.ogema.core.model.simple.SingleValueResource;
+import org.ogema.core.model.simple.StringResource;
 import org.ogema.core.recordeddata.RecordedData;
 import org.ogema.core.timeseries.ReadOnlyTimeSeries;
 import org.ogema.model.metering.ElectricityMeter;
 import org.ogema.tools.resource.util.LoggingUtils;
+import org.ogema.tools.resource.util.ResourceUtils;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingAlgorithm;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingResult;
 import org.smartrfactory.contest.app.machine.identification.algo.MatchingStatistics;
 import org.smartrfactory.contest.app.machine.identification.algo.impl.MatchingResultImpl;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizBaseConfig;
+import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlant;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantOperationalState;
 import org.smartrfactory.contest.app.powerbizbase.config.PowervizPlantType;
 
@@ -84,10 +89,44 @@ public class MeterController implements Callable<MatchingResult> {
 				MachineIdentificationApp.logger.error("Matching result is null for meter {}",meter);
 				return null;
 			}
+			try {
+				final ReadOnlyTimeSeries bestSignature = results.firstEntry().getValue();
+				createAppliance(bestSignature);
+			} catch (Exception e) {
+				am.getLogger().error("Could not create appliance",e);
+			}
 			return new MatchingResultImpl(meter.connection().powerSensor().reading(), results);
 		} finally {
 			running = false;
 		}
+	}
+	
+	void createAppliance(ReadOnlyTimeSeries schedule) {
+		if (!(schedule instanceof Schedule))
+			return;
+		Resource parent = ((Schedule) schedule).getParent();
+		if (parent == null)
+			return;
+		parent = parent.getParent();
+		if (!(parent instanceof PowervizPlantOperationalState))
+			return;
+		PowervizPlantType type = IdentificationServlet.getDeviceType((PowervizPlantOperationalState) parent);
+		if (type == null)
+			return;
+		final String typename = type.name().isActive() ? type.name().getValue() :type.getName();
+		int cnt = 0;
+		Resource res;
+		String path;
+		do {
+			path = ResourceUtils.getValidResourceName(typename) + "_" + cnt++;
+			res = am.getResourceAccess().getResource(path);
+		} while (res != null);
+		PowervizPlant plant = am.getResourceManagement().createResource(path, PowervizPlant.class);
+		plant.name().<StringResource> create().setValue(typename + " " + cnt);
+		plant.id().<StringResource> create().setValue(path);
+		plant.meter().setAsReference(meter);
+		meter.addDecorator("device", plant);
+		plant.activate(true);
 	}
 	
 	static List<PowervizPlantOperationalState> getAllStates(PowervizBaseConfig config) {

@@ -257,7 +257,7 @@ public class IdentificationServlet extends HttpServlet {
 		return result;
 	}
 	
-	private static String getDeviceName(PowervizPlantOperationalState state) {
+	static String getDeviceName(PowervizPlantOperationalState state) {
 		Resource parent = state;
 		for (int i=0;i<3;i++) {
 			parent = parent.getParent();
@@ -265,8 +265,20 @@ public class IdentificationServlet extends HttpServlet {
 				return null;
 		}
          PowervizPlantType type = (PowervizPlantType) parent;
-		 final String typeName = (type.name().isActive() ? type.name().getValue() : type.getPath());
+		 final String typeName = (type.name().isActive() ? type.name().getValue() : type.getName());
 		 return typeName;
 	}
+	
+	static PowervizPlantType getDeviceType(PowervizPlantOperationalState state) {
+		Resource parent = state;
+		for (int i=0;i<3;i++) {
+			parent = parent.getParent();
+			if (parent == null)
+				return null;
+		}
+         PowervizPlantType type = (PowervizPlantType) parent;
+		 return type;
+	}
+
 
 }
