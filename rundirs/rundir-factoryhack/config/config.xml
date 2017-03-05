@@ -261,6 +261,7 @@
 	    <bundle dir="bin/apps" groupId="org.smartrfactory.contest.app" artifactId="powervis-profiletaker" version="2.1.1-SNAPSHOT" startLevel="30" /> 
 	    <bundle dir="bin/apps" groupId="org.smartrplace.apps" artifactId="smartrplace-util" version="2.1.1-SNAPSHOT" startLevel="30" /> 
      	<bundle dir="bin/apps" groupId="org.smartrfactory.contest.app" artifactId="machine-identification" version="1.0.0-SNAPSHOT" startLevel="30" /> 
+     	<bundle dir="bin/apps" groupId="org.smartrfactory.contest.app" artifactId="powerviz-devicematching-gui" version="1.0.0-SNAPSHOT" startLevel="30" /> 
 		 
     </bundles>
 
