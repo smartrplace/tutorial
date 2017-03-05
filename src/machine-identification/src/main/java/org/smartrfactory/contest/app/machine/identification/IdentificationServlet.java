@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.ogema.core.model.Resource;
 import org.ogema.core.model.schedule.AbsoluteSchedule;
@@ -113,7 +114,16 @@ public class IdentificationServlet extends HttpServlet {
 			final SerializationManager sman  = app.am.getSerializationManager();
 			final StringWriter writer = new StringWriter();
 			sman.writeJson(writer,  contorller.getReading(), rd, start, end, 2000, ReductionMode.NONE);
-			object.put("values", writer.toString());
+			final String logdata = writer.toString();
+			final JSONObject o;
+			try {
+				o = new JSONObject(logdata);
+			} catch (JSONException e) {
+				MachineIdentificationApp.logger.error("Invalid json: " + logdata,e);
+				resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to generate log data");
+				return;
+			}
+			object.put("values",o);
 		}
 		else {
 			MachineIdentificationApp.logger.warn("Logdata not found for " + meter);
