@@ -28,7 +28,6 @@ public class PowerbizBaseApp implements Application {
         appMan = appManager;
         log = appManager.getLogger();
 
-        // 
         controller = new PowerbizBaseController(appMan);
      }
 
