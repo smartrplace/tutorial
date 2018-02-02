@@ -1,2 +1,2 @@
 # tutorial
-OGEMA SDK Tutorial Applications
+Smartrplace OGEMA Tutorial Applications
